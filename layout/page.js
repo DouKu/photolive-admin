@@ -5,7 +5,12 @@ const Page = (Content) =>
   class extends Component {
     render () {
       return (
-        <div></div>
+        <div>
+          <Header/>
+          <Content/>
+        </div>
       );
     }
   }
+
+export default Page;
