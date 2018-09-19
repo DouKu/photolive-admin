@@ -74,7 +74,8 @@ html, body, #__next, .main {
     position: relative;
     padding: 18px 26px;
     margin-bottom: 5px;
-    background-color: #ffffff; }
+    background-color: #ffffff;
+    cursor: pointer; }
     .sidebar-box .menu.active::before {
       content: '';
       position: absolute;

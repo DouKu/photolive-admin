@@ -12,9 +12,9 @@ class Sidebar extends Component {
     )
   }
   drawMenus (menus = []) {
-    return menus.map(menu => {
+    return menus.map((menu, index) => {
       return (
-        <div className="menu active">{menu}</div>
+        <div className="menu active" key={index}>{menu}</div>
       )
     });
   }

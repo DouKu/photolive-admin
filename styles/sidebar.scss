@@ -8,6 +8,7 @@
     padding: 18px 26px;
     margin-bottom: 5px;
     background-color: $boxColor;
+    cursor: pointer;
     &.active::before {
       content: '';
       position: absolute;

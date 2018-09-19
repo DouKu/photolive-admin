@@ -144,9 +144,10 @@ function (_Component) {
     key: "drawMenus",
     value: function drawMenus() {
       var menus = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-      return menus.map(function (menu) {
+      return menus.map(function (menu, index) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           className: "menu active",
+          key: index,
           __source: {
             fileName: _jsxFileName,
             lineNumber: 17
