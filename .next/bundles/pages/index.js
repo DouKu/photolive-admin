@@ -62,12 +62,28 @@ function (_Component) {
   _createClass(Sidebar, [{
     key: "render",
     value: function render() {
+      var menus = ['基础配置', '展示配置', '宣传配置', '其他配置'];
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "sidebar-box",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 6
+          lineNumber: 9
         }
-      }, "Sidebar");
+      }, this.drawMenus(menus));
+    }
+  }, {
+    key: "drawMenus",
+    value: function drawMenus() {
+      var menus = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      return menus.map(function (menu) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          className: "menu active",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          }
+        }, menu);
+      });
     }
   }]);
 

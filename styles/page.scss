@@ -3,13 +3,22 @@ html, body, #__next, .main {
   height: 100%;
 }
 
+.main {
+  background-color: $pageColor;
+}
+
 .page-container {
+  position: relative;
   max-width: 1160px;
   margin: 20px auto;
 }
 
 .sidebar-container {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .content-container {
+  margin-left: $sidebarWidth + 20px;
 }
