@@ -1,0 +1,35 @@
+{
+  "name": "photolive-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server/index.js",
+    "start": "NODE_ENV=production node server.js",
+    "build": "next build"
+  },
+  "keywords": [
+    "photolive",
+    "admin"
+  ],
+  "author": "lgybetter",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-sass": "^0.2.0",
+    "classnames": "^2.2.6",
+    "koa": "^2.5.3",
+    "koa-router": "^7.4.0",
+    "mobx": "^5.1.2",
+    "mobx-react": "^5.2.8",
+    "next": "^6.1.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4"
+  }
+}
