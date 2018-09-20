@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Header from '../components/header';
 import Sidebar from '../components/sidebar';
+import SideTag from '../components/side-tag';
 
 const Page = (Content) => 
   class extends Component {
@@ -10,6 +11,7 @@ const Page = (Content) =>
           <Header/>
           <div className="page-container">
             <div className="sidebar-container">
+              <SideTag/>
               <Sidebar/>
             </div>
             <div className="content-container">

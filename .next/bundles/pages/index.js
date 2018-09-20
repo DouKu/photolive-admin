@@ -23,6 +23,80 @@ var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/h
 
 /***/ }),
 
+/***/ "./components/side-tag.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/_react@16.5.1@react/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/side-tag.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var SideTag =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(SideTag, _Component);
+
+  function SideTag() {
+    _classCallCheck(this, SideTag);
+
+    return _possibleConstructorReturn(this, (SideTag.__proto__ || Object.getPrototypeOf(SideTag)).apply(this, arguments));
+  }
+
+  _createClass(SideTag, [{
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "side-tag",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "tag",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        }
+      }, "\u590F\u5B63\u5A5A\u793C\u6D41\u884C\u8D8B\u52BF\u53D1\u5E03\u4F1A\u76F8\u518C"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "button",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 9
+        }
+      }, "\u5B8C\u6210\u76F8\u518C\u914D\u7F6E"));
+    }
+  }]);
+
+  return SideTag;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (SideTag);
+
+/***/ }),
+
 /***/ "./components/sidebar.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -103,6 +177,7 @@ function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_header__ = __webpack_require__("./components/header.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_sidebar__ = __webpack_require__("./components/sidebar.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_side_tag__ = __webpack_require__("./components/side-tag.js");
 var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/layout/page.js";
 
 
@@ -119,6 +194,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -143,40 +219,45 @@ var Page = function Page(Content) {
             className: "main",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 9
+              lineNumber: 10
             }
           }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__components_header__["a" /* default */], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 10
+              lineNumber: 11
             }
           }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
             className: "page-container",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 11
+              lineNumber: 12
             }
           }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
             className: "sidebar-container",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 12
+              lineNumber: 13
             }
-          }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_sidebar__["a" /* default */], {
+          }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_side_tag__["a" /* default */], {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 13
+              lineNumber: 14
+            }
+          }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_sidebar__["a" /* default */], {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 15
             }
           })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
             className: "content-container",
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 15
+              lineNumber: 17
             }
           }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Content, {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 16
+              lineNumber: 18
             }
           }))));
         }
@@ -206,89 +287,6 @@ var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
 module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
   return $JSON.stringify.apply($JSON, arguments);
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/_css-loader@0.28.9@css-loader/lib/css-base.js":
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
 
 
 /***/ }),

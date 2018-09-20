@@ -10,7 +10,7 @@ html, body, #__next, .main {
 .page-container {
   position: relative;
   max-width: 1160px;
-  margin: 20px auto;
+  margin: 30px auto;
 }
 
 .sidebar-container {
@@ -20,5 +20,5 @@ html, body, #__next, .main {
 }
 
 .content-container {
-  margin-left: $sidebarWidth + 20px;
+  margin-left: $sidebarWidth + 30px;
 }
