@@ -1,17 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
 import Page from '../layout/page'
+import Content from '../layout/content';
+import TitleCard from '../components/title-card';
 
 import '../styles/style.scss'
 
 @Page
+@Content
 class Home extends React.Component {
   render () {
     return (
-      <ul>
-        <li><Link href='/a'><a>a</a></Link></li>
-        <li><Link href='/b'><a>b</a></Link></li>
-      </ul>
+      <div>
+        <TitleCard title="基础配置" desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"/>
+      </div>
     )
   }
 }

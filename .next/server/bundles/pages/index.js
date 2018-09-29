@@ -238,6 +238,150 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./components/title-card.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/title-card.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var TitleCard =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(TitleCard, _Component);
+
+  function TitleCard() {
+    _classCallCheck(this, TitleCard);
+
+    return _possibleConstructorReturn(this, (TitleCard.__proto__ || Object.getPrototypeOf(TitleCard)).apply(this, arguments));
+  }
+
+  _createClass(TitleCard, [{
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "pl-title-card",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
+        className: "title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        }
+      }, this.props.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+        className: "desc",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 8
+        }
+      }, this.props.desc));
+    }
+  }]);
+
+  return TitleCard;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (TitleCard);
+
+/***/ }),
+
+/***/ "./layout/content.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/layout/content.js";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var Content = function Content(Manage) {
+  return (
+    /*#__PURE__*/
+    function (_Component) {
+      _inherits(_class, _Component);
+
+      function _class() {
+        _classCallCheck(this, _class);
+
+        return _possibleConstructorReturn(this, (_class.__proto__ || Object.getPrototypeOf(_class)).apply(this, arguments));
+      }
+
+      _createClass(_class, [{
+        key: "render",
+        value: function render() {
+          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+            className: "content",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 7
+            }
+          }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+            className: "manage-container",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 8
+            }
+          }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Manage, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 9
+            }
+          })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+            className: "preview-container",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 11
+            }
+          }));
+        }
+      }]);
+
+      return _class;
+    }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])
+  );
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Content);
+
+/***/ }),
+
 /***/ "./layout/page.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -351,8 +495,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__layout_page__ = __webpack_require__("./layout/page.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_style_scss__ = __webpack_require__("./styles/style.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__styles_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__layout_content__ = __webpack_require__("./layout/content.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_title_card__ = __webpack_require__("./components/title-card.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles_style_scss__ = __webpack_require__("./styles/style.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__styles_style_scss__);
 var _class,
     _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/pages/index.js";
 
@@ -375,7 +521,9 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Home = Object(__WEBPACK_IMPORTED_MODULE_2__layout_page__["a" /* default */])(_class =
+
+
+var Home = Object(__WEBPACK_IMPORTED_MODULE_2__layout_page__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_3__layout_content__["a" /* default */])(_class =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(Home, _React$Component);
@@ -389,49 +537,24 @@ function (_React$Component) {
   _createClass(Home, [{
     key: "render",
     value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 14
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_title_card__["a" /* default */], {
+        title: "\u57FA\u7840\u914D\u7F6E",
+        desc: "\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 15
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
-        href: "/a",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        }
-      }, "a"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_link___default.a, {
-        href: "/b",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      }, "b"))));
+      }));
     }
   }]);
 
   return Home;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component)) || _class) || _class;
 
 /* harmony default export */ __webpack_exports__["default"] = (Home);
 

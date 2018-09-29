@@ -68,6 +68,21 @@ html, body, #__next, .main {
 .content-container {
   margin-left: 250px; }
 
+.content {
+  position: relative; }
+  .content .manage-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 540px; }
+  .content .preview-container {
+    width: 340px;
+    margin-left: 570px;
+    height: 604px;
+    background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538243553942&di=f701531a52ad855df145e0bbb2aec54b&imgtype=0&src=http%3A%2F%2Fimgsa.baidu.com%2Fexp%2Fw%3D500%2Fsign%3Dc6491685983df8dca63d8f91fd1072bf%2F0e2442a7d933c89567c58009d61373f08202000c.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat; }
+
 .side-tag {
   position: relative;
   width: 220px;
@@ -80,7 +95,7 @@ html, body, #__next, .main {
     font-size: 18px;
     line-height: 1.5;
     background-color: #ffffff;
-    color: #7b7b7d; }
+    color: #646466; }
   .side-tag .button {
     width: 100%;
     height: 40px;
@@ -116,7 +131,7 @@ html, body, #__next, .main {
 .sidebar-box {
   width: 220px;
   overflow: hidden;
-  color: #7b7b7d;
+  color: #646466;
   margin-bottom: -4px; }
   .sidebar-box .menu {
     position: relative;
@@ -143,5 +158,21 @@ html, body, #__next, .main {
   width: 100%;
   height: 60px;
   background-color: #646466; }
+
+.pl-title-card {
+  width: 100%;
+  padding: 25px 30px;
+  color: #646466;
+  background: #ffffff;
+  overflow: hidden; }
+  .pl-title-card .title {
+    float: left;
+    font-size: 18px;
+    font-weight: bold; }
+  .pl-title-card .desc {
+    float: left;
+    width: 278px;
+    margin-left: 39px;
+    font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map*/
