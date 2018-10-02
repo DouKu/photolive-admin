@@ -1,0 +1,29 @@
+.pl-form-item-card {
+  padding: 15px 30px;
+  background: $boxColor;
+  margin-bottom: 4px;
+  .pl-form-item {
+    display: table-row;
+    font-size: 14px;
+    .pl-form-label {
+      display: table-cell;
+      vertical-align: top;
+      min-width: 90px;
+      color: $mainTextColor;
+      line-height: 30px;
+    }
+    .pl-form-input {
+      display: table-cell;
+      vertical-align: top;
+      line-height: 30px;
+    }
+    .pl-text-area {
+      margin-top: 3px;
+    }
+  }
+  &.pl-block-label {
+    .pl-form-item, .pl-form-label, .pl-form-input {
+      display: block;
+    }
+  }
+}

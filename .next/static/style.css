@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
+ol, ul, li {
   list-style: none; }
 
 blockquote, q {
@@ -162,17 +162,61 @@ html, body, #__next, .main {
 .pl-title-card {
   width: 100%;
   padding: 25px 30px;
+  margin-bottom: 4px;
   color: #646466;
   background: #ffffff;
   overflow: hidden; }
   .pl-title-card .title {
     float: left;
-    font-size: 18px;
-    font-weight: bold; }
+    font-size: 18px; }
   .pl-title-card .desc {
     float: left;
     width: 278px;
     margin-left: 39px;
     font-size: 14px; }
+
+.pl-form-item-card {
+  padding: 15px 30px;
+  background: #ffffff;
+  margin-bottom: 4px; }
+  .pl-form-item-card .pl-form-item {
+    display: table-row;
+    font-size: 14px; }
+    .pl-form-item-card .pl-form-item .pl-form-label {
+      display: table-cell;
+      vertical-align: top;
+      min-width: 90px;
+      color: #646466;
+      line-height: 30px; }
+    .pl-form-item-card .pl-form-item .pl-form-input {
+      display: table-cell;
+      vertical-align: top;
+      line-height: 30px; }
+    .pl-form-item-card .pl-form-item .pl-text-area {
+      margin-top: 3px; }
+  .pl-form-item-card.pl-block-label .pl-form-item, .pl-form-item-card.pl-block-label .pl-form-label, .pl-form-item-card.pl-block-label .pl-form-input {
+    display: block; }
+
+.pl-text {
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+  resize: none; }
+  .pl-text::-webkit-input-placeholder {
+    color: #b5b5b5; }
+
+.pl-text-area {
+  width: 100%; }
+
+.pl-button {
+  width: 100%;
+  background: #646466;
+  color: #ffffff;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map*/

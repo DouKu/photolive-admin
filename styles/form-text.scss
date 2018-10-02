@@ -1,0 +1,14 @@
+.pl-text {
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  font-size: 14px;
+  resize: none;
+  &::-webkit-input-placeholder {
+    color: $placeholderColor;
+  }
+}
+
+.pl-text-area {
+  width: 100%;
+}
