@@ -217,6 +217,59 @@ html, body, #__next, .main {
   height: 40px;
   line-height: 40px;
   font-size: 14px;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none;
+  border: 0; }
+
+.pl-image-upload {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  background-color: #ffffff; }
+  .pl-image-upload .pl-image-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    overflow: hidden; }
+    .pl-image-upload .pl-image-box img {
+      width: auto;
+      height: auto;
+      max-width: 150%;
+      max-height: 150%; }
+  .pl-image-upload .pl-image-content {
+    position: relative;
+    margin-left: 250px;
+    padding: 20px 30px;
+    height: 100%; }
+    .pl-image-upload .pl-image-content h3 {
+      color: #646466;
+      font-size: 14px;
+      margin-bottom: 18px; }
+    .pl-image-upload .pl-image-content p {
+      font-size: 13px;
+      color: #b5b5b5;
+      margin-bottom: 12px; }
+    .pl-image-upload .pl-image-content .action a {
+      color: #646466;
+      font-size: 13px;
+      cursor: pointer;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #eeeeee; }
+    .pl-image-upload .pl-image-content .action-btns {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      font-size: 0; }
+      .pl-image-upload .pl-image-content .action-btns button {
+        width: 50%;
+        height: 40px; }
+      .pl-image-upload .pl-image-content .action-btns button:first-child {
+        background: #B397E3; }
+      .pl-image-upload .pl-image-content .action-btns button:nth-child(2) {
+        background: #FFB5B5; }
 
 /*# sourceMappingURL=style.css.map*/
