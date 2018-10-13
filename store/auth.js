@@ -1,4 +1,4 @@
-import { action, observable } from 'mobx';
+import { action, observable, runInAction } from 'mobx';
 import api from '../api/auth';
 
 class Auth {
@@ -11,8 +11,8 @@ class Auth {
       data
     });
     runInAction (() => {
+      console.log(res)
     })
-    console.log(res, 'signIn');
     return res;
   }
 

@@ -33,7 +33,7 @@ class SignIn extends Component {
   render () {
     return (
       <div>
-        <h3>SignUp</h3>
+        <h3>SignIn</h3>
         Account<input onChange={this.handleInputAccount}></input><br/>
         Password<input type="password" onChange={this.handleInputPassword}></input><br/>
         <button onClick={this.handleSignIn}>登录</button>
