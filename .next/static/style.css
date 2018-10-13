@@ -249,6 +249,8 @@ html, body, #__next, .main {
       font-size: 14px;
       margin-bottom: 18px; }
     .pl-image-upload .pl-image-content p {
+      max-width: 150px;
+      line-height: 1.5;
       font-size: 13px;
       color: #b5b5b5;
       margin-bottom: 12px; }

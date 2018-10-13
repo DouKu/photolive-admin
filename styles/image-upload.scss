@@ -29,6 +29,8 @@
       margin-bottom: 18px;
     }
     p {
+      max-width: 150px;
+      line-height: 1.5;
       font-size: 13px;
       color: $placeholderColor;
       margin-bottom: 12px;
