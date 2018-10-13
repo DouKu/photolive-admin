@@ -1,18 +1,31 @@
 import { action, observable } from 'mobx';
+import api from '../api/auth';
 
 class Auth {
   @observable token = '';
   @observable user = {};
 
   // 登录
-  @action signIn = () => {
+  @action async signIn (data) {
+    const { res } = await api.signIn({
+      data
+    });
+    runInAction (() => {
+    })
+    console.log(res, 'signIn');
+    return res;
   }
 
   // 注册
-  @action signUp = () => {
+  @action signUp (data) {
+    return api.signUp({
+      data
+    })
   }
 
   // 退出
-  @action signOut = () => {
+  @action signOut () {
   }
 }
+
+export default Auth;

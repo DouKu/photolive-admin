@@ -1,4 +1,5 @@
 import { action, observable } from 'mobx'
+import Auth from './auth';
 
 let store = null
 
@@ -7,7 +8,8 @@ class Store {
   @observable light = false
 
   constructor (isServer, lastUpdate) {
-    this.lastUpdate = lastUpdate
+    this.auth = new Auth();
+    this.lastUpdate = lastUpdate;
   }
 
   @action start = () => {

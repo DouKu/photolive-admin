@@ -3,10 +3,13 @@ import Header from '../components/header';
 import Sidebar from '../components/sidebar';
 import SideTag from '../components/side-tag';
 import { menus } from '../config/sidebar';
+import Auth from '../mixins/auth';
+
 import '../styles/style.scss'
 
-const Page = (Content) => 
-  class extends Component {
+const Page = (Content) => {
+  @Auth
+  class AuthPage extends Component {
     render () {
       return (
         <div className="main">
@@ -24,5 +27,7 @@ const Page = (Content) =>
       );
     }
   }
+  return AuthPage;
+}
 
 export default Page;
