@@ -19,12 +19,14 @@
     "@zeit/next-sass": "^0.2.0",
     "classnames": "^2.2.6",
     "koa": "^2.5.3",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mobx": "^5.1.2",
     "mobx-react": "^5.2.8",
     "next": "^6.1.2",
     "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react-dom": "^16.5.1",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",

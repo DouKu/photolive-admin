@@ -1,8 +1,8 @@
 const Koa = require('koa');
+const bodyParser = require('koa-bodyparser');
 const next = require('next');
 const Router = require('./router');
 const mobxReact = require('mobx-react');
-
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -18,6 +18,7 @@ app.prepare()
       ctx.res.statusCode = 200;
       await next();
     });
+    server.use(bodyParser());
 
     server
       .use(router.routes())
