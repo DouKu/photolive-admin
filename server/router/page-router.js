@@ -2,7 +2,6 @@ const KoaRouter = require('koa-router');
 
 class PageRouter extends KoaRouter {
   constructor (app) {
-    
     super();
 
     const handle = app.getRequestHandler();
