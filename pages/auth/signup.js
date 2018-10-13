@@ -9,14 +9,15 @@ class SignUp extends Component {
   constructor () {
     super();
     this.state = {
+      account: '',
       nickname: '',
       realName: '',
       password: ''
     }
   }
-  handleInpuNickName (event) {
+  handleInputAccount (event) {
     this.setState({
-      nickname: event.target.value
+      account: event.target.value
     });
   }
   handleInputRealName (event) {
@@ -29,8 +30,14 @@ class SignUp extends Component {
       password: event.target.value
     });
   }
+  handleInputNickName (event) {
+    this.setState({
+      nickname: event.target.value
+    });
+  }
   handleSignUp () {
     this.props.store.auth.signUp({
+      account: this.state.account,
       real_name: this.state.realName,
       nickname: this.state.nickname,
       password: this.state.password
@@ -42,7 +49,8 @@ class SignUp extends Component {
     return (
       <div>
         <h3>SignUp</h3>
-        NickName<input onChange={this.handleInpuNickName}></input><br/>
+        Account<input onChange={this.handleInputAccount}></input><br/>
+        NickName<input onChange={this.handleInputNickName}></input><br/>
         RealName<input onChange={this.handleInputRealName}></input><br/>
         Password<input type="password" onChange={this.handleInputPassword}></input><br/>
         <button onClick={this.handleSignUp}>注册</button>

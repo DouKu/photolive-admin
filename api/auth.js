@@ -2,7 +2,7 @@ import http from '../lib/http';
 
 const signUp = ({ data }) => {
   return http.request({
-    url: 'v1/register',
+    url: '/v1/register',
     method: 'post',
     data
   })
@@ -10,7 +10,7 @@ const signUp = ({ data }) => {
 
 const signIn = ({ data }) => {
   return http.request({
-    url: 'v1/login/account',
+    url: '/v1/login/account',
     method: 'post',
     data
   })

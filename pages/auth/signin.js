@@ -13,7 +13,7 @@ class SignIn extends Component {
       password: ''
     }
   }
-  handleInpuAccount (event) {
+  handleInputAccount (event) {
     this.setState({
       account: event.target.value
     });
@@ -34,9 +34,9 @@ class SignIn extends Component {
     return (
       <div>
         <h3>SignUp</h3>
-        Account<input onChange={this.handleInpuAccount}></input><br/>
+        Account<input onChange={this.handleInputAccount}></input><br/>
         Password<input type="password" onChange={this.handleInputPassword}></input><br/>
-        <button onClick={this.handleSignIn}>注册</button>
+        <button onClick={this.handleSignIn}>登录</button>
       </div>
     )
   }
