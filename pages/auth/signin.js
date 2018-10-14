@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
+import Router from 'next/router';
 
 @inject('store')
 @observer
@@ -27,7 +28,9 @@ class SignIn extends Component {
     this.props.store.auth.signIn({
       ...this.state
     }).then(res => {
-      console.log(res);
+      if (res.code === 200) {
+        Router.replace('/');
+      }
     })
   }
   render () {

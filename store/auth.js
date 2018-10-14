@@ -7,11 +7,13 @@ class Auth {
 
   // 登录
   @action async signIn (data) {
-    const { res } = await api.signIn({
+    const { data: res } = await api.signIn({
       data
     });
-    runInAction (() => {
-      console.log(res)
+    runInAction(() => {
+      this.token = res.token;
+      this.user = res.user;
+      this.setToken();
     })
     return res;
   }
@@ -25,6 +27,10 @@ class Auth {
 
   // 退出
   @action signOut () {
+  }
+
+  setToken () {
+    localStorage.setItem('token', this.token);
   }
 }
 
