@@ -11,10 +11,9 @@ class Auth {
       data
     });
     runInAction(() => {
-      this.token = res.token;
-      this.user = res.user;
-      this.setToken();
-    })
+      this.setAuth(res.token, res.user);
+      this.saveAuth();
+    });
     return res;
   }
 
@@ -29,9 +28,16 @@ class Auth {
   @action signOut () {
   }
 
-  setToken () {
+  saveAuth () {
     localStorage.setItem('token', this.token);
+    localStorage.setItem('user', JSON.stringify(this.user));
   }
+
+  setAuth (token, user) {
+    this.token = token;
+    this.user = user;
+  }
+
 }
 
 export default Auth;

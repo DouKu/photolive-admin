@@ -6,6 +6,7 @@ import FormItem from '../components/form-item';
 import Input from '../components/input';
 import TextArea from '../components/text-area';
 import Button from '../components/button';
+import Select from '../components/select';
 
 @Page
 @Content
@@ -22,6 +23,9 @@ class Home extends Component {
         </FormItem>
         <FormItem label="活动地点" className="pl-block-label">
           <TextArea placeholder="请填写活动地点"></TextArea>
+        </FormItem>
+        <FormItem label="相册风格">
+          <Select></Select>
         </FormItem>
         <Button style={{marginTop: '6px'}}>保存设置</Button>
       </div>

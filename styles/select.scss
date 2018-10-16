@@ -1,0 +1,62 @@
+@import '../node_modules/rc-select/assets/index.css';
+.rc-select {
+  color: $mainTextColor;
+  min-width: 50px;
+}
+
+.rc-select-selection {
+  border: 0;
+  outline: none; 
+  border-radius: 0;
+}
+.rc-select .rc-select-selection__choice {
+  border-radius: 0;
+}
+.rc-select-focused, 
+.rc-select-enabled .rc-select-selection:hover, 
+.rc-select-enabled .rc-select-selection:active,
+.rc-select-focused .rc-select-selection {
+  box-shadow: 0 0 0;
+  border: 0;
+}
+
+.rc-select-disabled,
+.rc-select-disabled .rc-select-selection--single,
+.rc-select-disabled .rc-select-selection__choice__remove,
+.rc-select-disabled .rc-select-selection--single:hover,
+.rc-select-disabled .rc-select-selection__choice__remove:hover {
+  color: $placeholderColor;
+}
+
+.rc-select-dropdown {
+  border: 0;
+  border-radius: 0;
+}
+
+.rc-select-dropdown-menu {
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.rc-select-dropdown-menu-item-group-title {
+  color: #999;
+  border-bottom: 1px solid #dedede;
+}
+
+li.rc-select-dropdown-menu-item-selected:active {
+  background: $placeholderColor;
+}
+
+
+li.rc-select-dropdown-menu-item-active {
+  background-color: $placeholderColor;
+}
+
+li.rc-select-dropdown-menu-item {
+  font-size: 14px;
+  color: $mainTextColor;
+}
+
+.rc-select-arrow {
+  right: -7px;
+}
