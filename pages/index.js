@@ -29,19 +29,29 @@ class Home extends Component {
     const defaultValue = 'A';
     return (
       <div>
-        <TitleCard title="基础配置" desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"/>
+        <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
+          title="基础配置">
+        </TitleCard>
+
         <FormItem label="相册名字">
           <Input placeholder="请输入相册名字"></Input>
         </FormItem>
+
         <FormItem label="活动时间">
           <Input placeholder="请输入相册名字"></Input>
         </FormItem>
-        <FormItem label="活动地点" className="pl-block-label">
+
+        <FormItem label="活动地点" 
+          className="pl-block-label">
           <TextArea placeholder="请填写活动地点"></TextArea>
         </FormItem>
+
         <FormItem label="相册风格">
-          <Select defaultValue={defaultValue} options={styleOptions}></Select>
+          <Select defaultValue={defaultValue} 
+            options={styleOptions}>
+          </Select>
         </FormItem>
+        
         <Button style={{marginTop: '6px'}}>保存设置</Button>
       </div>
     )

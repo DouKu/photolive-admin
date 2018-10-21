@@ -4,12 +4,16 @@ export const menus = [
     route: '/'
   },
   {
-    name: '展示配置',
-    route: '/show'
+    name: '标签配置',
+    route: '/display/label'
   },
   {
-    name: '宣传配置',
-    route: '/propaganda'
+    name: '轮播配置',
+    route: '/display/banner'
+  },
+  {
+    name: '分享配置',
+    route: '/propaganda/share'
   },
   {
     name: '其他配置',

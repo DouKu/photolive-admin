@@ -14,15 +14,25 @@ class Propaganda extends Component {
   render () {
     return (
       <div>
-        <TitleCard title="分享设置" desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"/>
+        <TitleCard 
+          desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
+          title="分享设置">
+        </TitleCard>
+        
         <FormItem label="分享标题">
           <Input placeholder="默认为相册名字"></Input>
         </FormItem>
+
         <ImageUpload></ImageUpload>
-        <FormItem label="分享文案" className="pl-block-label">
+
+        <FormItem label="分享文案"
+          className="pl-block-label">
           <TextArea placeholder="请输入文字"></TextArea>
         </FormItem>
-        <Button style={{marginTop: '6px'}}>保存设置</Button>
+
+        <Button style={{marginTop: '6px'}}>
+          保存设置
+        </Button>
       </div>
     )
   }
