@@ -35,7 +35,8 @@
 
 .rc-select-dropdown-menu {
   border-radius: 0;
-  overflow: hidden;
+  overflow: visible;
+  max-height: 200px;
 }
 
 .rc-select-dropdown-menu-item-group-title {
@@ -47,9 +48,12 @@ li.rc-select-dropdown-menu-item-selected:active {
   background: $placeholderColor;
 }
 
+li.rc-select-dropdown-menu-item:hover {
+  background: $placeholderColor;
+}
 
 li.rc-select-dropdown-menu-item-active {
-  background-color: $placeholderColor;
+  background-color: #fff;
 }
 
 li.rc-select-dropdown-menu-item {
