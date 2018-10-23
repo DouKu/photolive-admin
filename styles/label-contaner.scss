@@ -1,0 +1,38 @@
+.label-container {
+  padding: 15px 30px;
+  background: $boxColor;
+  color: $mainTextColor;
+  font-size: 14px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  .left-contaner {
+    float: left;
+    i {
+      cursor: pointer;
+    }
+    .left-icon {
+      margin-left: 16px;
+    }
+  }
+  .right-container {
+    float: right;
+    span {
+      cursor: pointer;
+    }
+    .up-btn {
+     margin-right: 30px; 
+    }
+    .up-btn-disabled {
+      color: $placeholderColor;
+      i {
+        @extend .up-disabled-icon;
+      }
+    }
+    .down-btn-disabled {
+      color: $placeholderColor;
+      i {
+        @extend .down-disabled-icon;
+      }
+    }
+  }
+}
