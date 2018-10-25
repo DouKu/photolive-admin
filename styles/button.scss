@@ -10,3 +10,11 @@
   outline: none;
   border: 0;
 }
+
+.pl-button-add {
+  @extend .pl-button;
+  background: $boxColor;
+  padding-left: 30px;
+  color: $placeholderColor;
+  text-align: left;
+}

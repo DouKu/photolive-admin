@@ -8,7 +8,7 @@ import Button from '../../components/button';
 
 @Page
 @Content
-class Banner extends Component {
+class Label extends Component {
   render () {
     return (
       <div>
@@ -29,7 +29,7 @@ class Banner extends Component {
         
         <LabelInput placeholder="请输入标签名称"></LabelInput>
 
-        <Button style={{marginTop: '6px'}}>
+        <Button style={{marginTop: '10px'}}>
           保存设置
         </Button>
       </div>
@@ -37,4 +37,4 @@ class Banner extends Component {
   }
 }
 
-export default Banner;
+export default Label;

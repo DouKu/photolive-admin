@@ -16,6 +16,10 @@ export const menus = [
     route: '/propaganda/share'
   },
   {
+    name: '词条配置',
+    route: '/propaganda/word'
+  },
+  {
     name: '其他配置',
     route: '/extra'
   }

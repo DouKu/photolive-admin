@@ -1,41 +1,37 @@
 import { Component } from 'react';
+import TitleCard from '../../components/title-card';
 import Page from '../../layout/page'
 import Content from '../../layout/content';
-import TitleCard from '../../components/title-card';
 import FormItem from '../../components/form-item';
 import Input from '../../components/input';
-import TextArea from '../../components/text-area';
 import Button from '../../components/button';
-import ImageUpload from '../../components/upload/image-upload';
+import ButtonAdd from '../../components/button-add';
 
 @Page
 @Content
-class Propaganda extends Component {
+class Word extends Component {
   render () {
     return (
       <div>
         <TitleCard 
           desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
-          title="分享设置">
+          title="词条设置">
         </TitleCard>
-        
-        <FormItem label="分享标题">
-          <Input placeholder="默认为相册名字"></Input>
+
+        <FormItem label="相册名字">
+          <Input placeholder="请输入相册名字"></Input>
         </FormItem>
 
-        <ImageUpload></ImageUpload>
-
-        <FormItem label="分享文案"
-          className="pl-block-label">
-          <TextArea placeholder="请输入文字"></TextArea>
-        </FormItem>
+        <ButtonAdd>
+          点击添加词条卡片
+        </ButtonAdd>
 
         <Button style={{marginTop: '10px'}}>
           保存设置
         </Button>
       </div>
-    )
+    );
   }
 }
 
-export default Propaganda;
+export default Word;

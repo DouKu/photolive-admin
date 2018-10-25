@@ -52,7 +52,7 @@ class Home extends Component {
           </Select>
         </FormItem>
         
-        <Button style={{marginTop: '6px'}}>保存设置</Button>
+        <Button style={{marginTop: '10px'}}>保存设置</Button>
       </div>
     )
   }

@@ -24,12 +24,14 @@
     }
     .up-btn-disabled {
       color: $placeholderColor;
+      cursor: not-allowed;
       i {
         @extend .up-disabled-icon;
       }
     }
     .down-btn-disabled {
       color: $placeholderColor;
+      cursor: not-allowed;
       i {
         @extend .down-disabled-icon;
       }
