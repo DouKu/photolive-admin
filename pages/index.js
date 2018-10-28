@@ -7,26 +7,26 @@ import Input from '../components/input';
 import TextArea from '../components/text-area';
 import Button from '../components/button';
 import Select from '../components/select';
+import { autobind } from 'core-decorators';
 
 @Page
 @Content
+@autobind
 class Home extends Component {
+  constructor () {
+    super();
+    this.state = {
+      themeId: 1,
+      themeStyle: '一行三图'
+    }
+  }
   render () {
     const styleOptions = [
-      { value: 1, name: 'A' },
-      { value: 2, name: 'B' },
-      { value: 3, name: 'D' },
-      { value: 4, name: 'C' },
-      { value: 5, name: 'E' },
-      { value: 6, name: 'F' },
-      { value: 7, name: 'G' },
-      { value: 8, name: 'H' },
-      { value: 9, name: 'I' },
-      { value: 10, name: 'J' },
-      { value: 11, name: 'K' },
-      { value: 12, name: 'L' }
+      { value: 1, name: '一行三图' },
+      { value: 2, name: '瀑布流' },
+      { value: 3, name: '一行两图' }
     ];
-    const defaultValue = 'A';
+    const { themeId, themeStyle } = this.state;
     return (
       <div>
         <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
@@ -47,14 +47,23 @@ class Home extends Component {
         </FormItem>
 
         <FormItem label="相册风格">
-          <Select defaultValue={defaultValue} 
-            options={styleOptions}>
+          <Select defaultValue={themeId}
+            defaultLabel = {themeStyle}
+            options={styleOptions}
+            onChange={this.handleStyleChange}>
           </Select>
         </FormItem>
         
         <Button style={{marginTop: '10px'}}>保存设置</Button>
       </div>
     )
+  }
+  handleStyleChange (themeId, themeStyle) {
+    this.setState({
+      themeId,
+      themeStyle
+    });
+    console.log(themeId, themeStyle, 'dddd');
   }
 }
 

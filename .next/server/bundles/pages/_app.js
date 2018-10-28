@@ -67,82 +67,51 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 16);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/******/ ({
 
-module.exports = require("react");
-
-/***/ }),
-/* 1 */,
-/* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("mobx-react");
-
-/***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = require("@babel/runtime/regenerator");
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-module.exports = require("mobx");
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(17);
-
-
-/***/ }),
-/* 17 */
+/***/ "./api/auth.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_http__ = __webpack_require__("./lib/http.js");
 
-// EXTERNAL MODULE: external "next/app"
-var app_ = __webpack_require__(18);
-var app__default = /*#__PURE__*/__webpack_require__.n(app_);
 
-// EXTERNAL MODULE: external "react"
-var external__react_ = __webpack_require__(0);
-var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
+var signUp = function signUp(_ref) {
+  var data = _ref.data;
+  return __WEBPACK_IMPORTED_MODULE_0__lib_http__["a" /* default */].request({
+    url: '/v1/register',
+    method: 'post',
+    data: data
+  });
+};
 
-// EXTERNAL MODULE: external "@babel/runtime/regenerator"
-var regenerator_ = __webpack_require__(14);
-var regenerator__default = /*#__PURE__*/__webpack_require__.n(regenerator_);
+var signIn = function signIn(_ref2) {
+  var data = _ref2.data;
+  return __WEBPACK_IMPORTED_MODULE_0__lib_http__["a" /* default */].request({
+    url: '/v1/login/account',
+    method: 'post',
+    data: data
+  });
+};
 
-// EXTERNAL MODULE: external "mobx"
-var external__mobx_ = __webpack_require__(15);
-var external__mobx__default = /*#__PURE__*/__webpack_require__.n(external__mobx_);
+/* harmony default export */ __webpack_exports__["a"] = ({
+  signUp: signUp,
+  signIn: signIn
+});
 
-// EXTERNAL MODULE: external "axios"
-var external__axios_ = __webpack_require__(19);
-var external__axios__default = /*#__PURE__*/__webpack_require__.n(external__axios_);
+/***/ }),
 
-// CONCATENATED MODULE: ./lib/http.js
+/***/ "./lib/http.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-external__axios__default.a.interceptors.request.use(function (config) {
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__("axios");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.interceptors.request.use(function (config) {
   config.baseURL = '/api';
   config.headers = {
     authorization: "Bearer ".concat(localStorage.getItem('token'))
@@ -151,39 +120,242 @@ external__axios__default.a.interceptors.request.use(function (config) {
 }, function (error) {
   return Promise.reject(error);
 });
-external__axios__default.a.interceptors.response.use(function (response) {
+__WEBPACK_IMPORTED_MODULE_0_axios___default.a.interceptors.response.use(function (response) {
   return response;
 }, function (error) {
   console.error(error);
   return Promise.reject(error);
 });
-/* harmony default export */ var http = (external__axios__default.a);
-// CONCATENATED MODULE: ./api/auth.js
+/* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_axios___default.a);
+
+/***/ }),
+
+/***/ "./lib/with-mobx-store.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__("./store/index.js");
+
+var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/lib/with-mobx-store.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
-var auth_signUp = function signUp(_ref) {
-  var data = _ref.data;
-  return http.request({
-    url: '/v1/register',
-    method: 'post',
-    data: data
-  });
-};
 
-var auth_signIn = function signIn(_ref2) {
-  var data = _ref2.data;
-  return http.request({
-    url: '/v1/login/account',
-    method: 'post',
-    data: data
-  });
-};
+var isServer = typeof window === 'undefined';
+var __NEXT_MOBX_STORE__ = '__NEXT_MOBX_STORE__';
 
-/* harmony default export */ var auth = ({
-  signUp: auth_signUp,
-  signIn: auth_signIn
+function getOrCreateStore(initialState) {
+  // Always make a new store if server, otherwise state is shared between requests
+  if (isServer) {
+    return Object(__WEBPACK_IMPORTED_MODULE_2__store__["a" /* initializeStore */])(initialState);
+  } // Create store if unavailable on the client and set it on the window object
+
+
+  if (!window[__NEXT_MOBX_STORE__]) {
+    window[__NEXT_MOBX_STORE__] = Object(__WEBPACK_IMPORTED_MODULE_2__store__["a" /* initializeStore */])(initialState);
+  }
+
+  return window[__NEXT_MOBX_STORE__];
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (function (App) {
+  return (
+    /*#__PURE__*/
+    function (_React$Component) {
+      _inherits(AppWithMobx, _React$Component);
+
+      _createClass(AppWithMobx, null, [{
+        key: "getInitialProps",
+        value: function () {
+          var _getInitialProps = _asyncToGenerator(
+          /*#__PURE__*/
+          __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(appContext) {
+            var mobxStore, appProps;
+            return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    // Get or Create the store with `undefined` as initialState
+                    // This allows you to set a custom default initialState
+                    mobxStore = getOrCreateStore(); // Provide the store to getInitialProps of pages
+
+                    appContext.ctx.mobxStore = mobxStore;
+                    appProps = {};
+
+                    if (!(typeof App.getInitialProps === 'function')) {
+                      _context.next = 7;
+                      break;
+                    }
+
+                    _context.next = 6;
+                    return App.getInitialProps.call(App, appContext);
+
+                  case 6:
+                    appProps = _context.sent;
+
+                  case 7:
+                    return _context.abrupt("return", _objectSpread({}, appProps, {
+                      initialMobxState: mobxStore
+                    }));
+
+                  case 8:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+
+          return function getInitialProps(_x) {
+            return _getInitialProps.apply(this, arguments);
+          };
+        }()
+      }]);
+
+      function AppWithMobx(props) {
+        var _this;
+
+        _classCallCheck(this, AppWithMobx);
+
+        _this = _possibleConstructorReturn(this, (AppWithMobx.__proto__ || Object.getPrototypeOf(AppWithMobx)).call(this, props));
+        _this.mobxStore = getOrCreateStore(props.initialMobxState);
+        return _this;
+      }
+
+      _createClass(AppWithMobx, [{
+        key: "render",
+        value: function render() {
+          return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(App, _extends({}, this.props, {
+            mobxStore: this.mobxStore,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 47
+            }
+          }));
+        }
+      }]);
+
+      return AppWithMobx;
+    }(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component)
+  );
 });
-// CONCATENATED MODULE: ./store/auth.js
+
+/***/ }),
+
+/***/ "./pages/_app.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_next_app__ = __webpack_require__("next/app");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_next_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_next_app__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lib_with_mobx_store__ = __webpack_require__("./lib/with-mobx-store.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_mobx_react__ = __webpack_require__("mobx-react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_mobx_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_mobx_react__);
+var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/pages/_app.js";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var PhotoLive =
+/*#__PURE__*/
+function (_App) {
+  _inherits(PhotoLive, _App);
+
+  function PhotoLive() {
+    _classCallCheck(this, PhotoLive);
+
+    return _possibleConstructorReturn(this, (PhotoLive.__proto__ || Object.getPrototypeOf(PhotoLive)).apply(this, arguments));
+  }
+
+  _createClass(PhotoLive, [{
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          Component = _props.Component,
+          pageProps = _props.pageProps,
+          mobxStore = _props.mobxStore;
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_0_next_app__["Container"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_mobx_react__["Provider"], {
+        store: mobxStore,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 11
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(Component, _extends({}, pageProps, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        }
+      }))));
+    }
+  }]);
+
+  return PhotoLive;
+}(__WEBPACK_IMPORTED_MODULE_0_next_app___default.a);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_2__lib_with_mobx_store__["a" /* default */])(PhotoLive));
+
+/***/ }),
+
+/***/ "./store/auth.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mobx__ = __webpack_require__("mobx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mobx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_mobx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_auth__ = __webpack_require__("./api/auth.js");
 
 
 var _desc, _value, _class, _descriptor, _descriptor2;
@@ -241,7 +413,7 @@ function _initializerWarningHelper(descriptor, context) {
 
 
 
-var auth_Auth = (_class =
+var Auth = (_class =
 /*#__PURE__*/
 function () {
   function Auth() {
@@ -258,24 +430,24 @@ function () {
     value: function () {
       var _signIn = _asyncToGenerator(
       /*#__PURE__*/
-      regenerator__default.a.mark(function _callee(data) {
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(data) {
         var _this = this;
 
         var _ref, res;
 
-        return regenerator__default.a.wrap(function _callee$(_context) {
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return auth.signIn({
+                return __WEBPACK_IMPORTED_MODULE_2__api_auth__["a" /* default */].signIn({
                   data: data
                 });
 
               case 2:
                 _ref = _context.sent;
                 res = _ref.data;
-                Object(external__mobx_["runInAction"])(function () {
+                Object(__WEBPACK_IMPORTED_MODULE_1_mobx__["runInAction"])(function () {
                   _this.setAuth(res.token, res.user);
 
                   _this.saveAuth();
@@ -298,7 +470,7 @@ function () {
   }, {
     key: "signUp",
     value: function signUp(data) {
-      return auth.signUp({
+      return __WEBPACK_IMPORTED_MODULE_2__api_auth__["a" /* default */].signUp({
         data: data
       });
     } // 退出
@@ -321,22 +493,32 @@ function () {
   }]);
 
   return Auth;
-}(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "token", [external__mobx_["observable"]], {
+}(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "token", [__WEBPACK_IMPORTED_MODULE_1_mobx__["observable"]], {
   enumerable: true,
   initializer: function initializer() {
     return '';
   }
-}), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, "user", [external__mobx_["observable"]], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, "user", [__WEBPACK_IMPORTED_MODULE_1_mobx__["observable"]], {
   enumerable: true,
   initializer: function initializer() {
     return {};
   }
-}), _applyDecoratedDescriptor(_class.prototype, "signIn", [external__mobx_["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "signIn"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "signUp", [external__mobx_["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "signUp"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "signOut", [external__mobx_["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "signOut"), _class.prototype)), _class);
-/* harmony default export */ var store_auth = (auth_Auth);
-// CONCATENATED MODULE: ./store/index.js
-var store__desc, store__value, store__class, store__descriptor, store__descriptor2, _descriptor3;
+}), _applyDecoratedDescriptor(_class.prototype, "signIn", [__WEBPACK_IMPORTED_MODULE_1_mobx__["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "signIn"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "signUp", [__WEBPACK_IMPORTED_MODULE_1_mobx__["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "signUp"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "signOut", [__WEBPACK_IMPORTED_MODULE_1_mobx__["action"]], Object.getOwnPropertyDescriptor(_class.prototype, "signOut"), _class.prototype)), _class);
+/* harmony default export */ __webpack_exports__["a"] = (Auth);
 
-function store__initDefineProp(target, property, descriptor, context) {
+/***/ }),
+
+/***/ "./store/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = initializeStore;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mobx__ = __webpack_require__("mobx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_mobx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_mobx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth__ = __webpack_require__("./store/auth.js");
+var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3;
+
+function _initDefineProp(target, property, descriptor, context) {
   if (!descriptor) return;
   Object.defineProperty(target, property, {
     enumerable: descriptor.enumerable,
@@ -346,9 +528,9 @@ function store__initDefineProp(target, property, descriptor, context) {
   });
 }
 
-function store__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function store__applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
   var desc = {};
   Object['ke' + 'ys'](descriptor).forEach(function (key) {
     desc[key] = descriptor[key];
@@ -377,41 +559,41 @@ function store__applyDecoratedDescriptor(target, property, decorators, descripto
   return desc;
 }
 
-function store__initializerWarningHelper(descriptor, context) {
+function _initializerWarningHelper(descriptor, context) {
   throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
 
 
 var store = null;
-var store_Store = (store__class = function Store(isServer, lastUpdate) {
+var Store = (_class = function Store(isServer, lastUpdate) {
   var _this = this;
 
-  store__classCallCheck(this, Store);
+  _classCallCheck(this, Store);
 
-  store__initDefineProp(this, "lastUpdate", store__descriptor, this);
+  _initDefineProp(this, "lastUpdate", _descriptor, this);
 
-  store__initDefineProp(this, "light", store__descriptor2, this);
+  _initDefineProp(this, "light", _descriptor2, this);
 
-  store__initDefineProp(this, "start", _descriptor3, this);
+  _initDefineProp(this, "start", _descriptor3, this);
 
   this.stop = function () {
     return clearInterval(_this.timer);
   };
 
-  this.auth = new store_auth();
+  this.auth = new __WEBPACK_IMPORTED_MODULE_1__auth__["a" /* default */]();
   this.lastUpdate = lastUpdate;
-}, (store__descriptor = store__applyDecoratedDescriptor(store__class.prototype, "lastUpdate", [external__mobx_["observable"]], {
+}, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "lastUpdate", [__WEBPACK_IMPORTED_MODULE_0_mobx__["observable"]], {
   enumerable: true,
   initializer: function initializer() {
     return 0;
   }
-}), store__descriptor2 = store__applyDecoratedDescriptor(store__class.prototype, "light", [external__mobx_["observable"]], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, "light", [__WEBPACK_IMPORTED_MODULE_0_mobx__["observable"]], {
   enumerable: true,
   initializer: function initializer() {
     return false;
   }
-}), _descriptor3 = store__applyDecoratedDescriptor(store__class.prototype, "start", [external__mobx_["action"]], {
+}), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, "start", [__WEBPACK_IMPORTED_MODULE_0_mobx__["action"]], {
   enumerable: true,
   initializer: function initializer() {
     var _this2 = this;
@@ -423,205 +605,72 @@ var store_Store = (store__class = function Store(isServer, lastUpdate) {
       }, 1000);
     };
   }
-})), store__class);
+})), _class);
 function initializeStore(isServer) {
   var lastUpdate = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : Date.now();
 
   if (isServer) {
-    return new store_Store(isServer, lastUpdate);
+    return new Store(isServer, lastUpdate);
   } else {
     if (store === null) {
-      store = new store_Store(isServer, lastUpdate);
+      store = new Store(isServer, lastUpdate);
     }
 
     return store;
   }
 }
-// CONCATENATED MODULE: ./lib/with-mobx-store.js
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function with_mobx_store__asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
-
-function with_mobx_store__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function with_mobx_store__defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function with_mobx_store__createClass(Constructor, protoProps, staticProps) { if (protoProps) with_mobx_store__defineProperties(Constructor.prototype, protoProps); if (staticProps) with_mobx_store__defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-var with_mobx_store_isServer = typeof window === 'undefined';
-var __NEXT_MOBX_STORE__ = '__NEXT_MOBX_STORE__';
-
-function getOrCreateStore(initialState) {
-  // Always make a new store if server, otherwise state is shared between requests
-  if (with_mobx_store_isServer) {
-    return initializeStore(initialState);
-  } // Create store if unavailable on the client and set it on the window object
-
-
-  if (!window[__NEXT_MOBX_STORE__]) {
-    window[__NEXT_MOBX_STORE__] = initializeStore(initialState);
-  }
-
-  return window[__NEXT_MOBX_STORE__];
-}
-
-/* harmony default export */ var with_mobx_store = (function (App) {
-  return (
-    /*#__PURE__*/
-    function (_React$Component) {
-      _inherits(AppWithMobx, _React$Component);
-
-      with_mobx_store__createClass(AppWithMobx, null, [{
-        key: "getInitialProps",
-        value: function () {
-          var _getInitialProps = with_mobx_store__asyncToGenerator(
-          /*#__PURE__*/
-          regenerator__default.a.mark(function _callee(appContext) {
-            var mobxStore, appProps;
-            return regenerator__default.a.wrap(function _callee$(_context) {
-              while (1) {
-                switch (_context.prev = _context.next) {
-                  case 0:
-                    // Get or Create the store with `undefined` as initialState
-                    // This allows you to set a custom default initialState
-                    mobxStore = getOrCreateStore(); // Provide the store to getInitialProps of pages
-
-                    appContext.ctx.mobxStore = mobxStore;
-                    appProps = {};
-
-                    if (!(typeof App.getInitialProps === 'function')) {
-                      _context.next = 7;
-                      break;
-                    }
-
-                    _context.next = 6;
-                    return App.getInitialProps.call(App, appContext);
-
-                  case 6:
-                    appProps = _context.sent;
-
-                  case 7:
-                    return _context.abrupt("return", _objectSpread({}, appProps, {
-                      initialMobxState: mobxStore
-                    }));
-
-                  case 8:
-                  case "end":
-                    return _context.stop();
-                }
-              }
-            }, _callee, this);
-          }));
-
-          return function getInitialProps(_x) {
-            return _getInitialProps.apply(this, arguments);
-          };
-        }()
-      }]);
-
-      function AppWithMobx(props) {
-        var _this;
-
-        with_mobx_store__classCallCheck(this, AppWithMobx);
-
-        _this = _possibleConstructorReturn(this, (AppWithMobx.__proto__ || Object.getPrototypeOf(AppWithMobx)).call(this, props));
-        _this.mobxStore = getOrCreateStore(props.initialMobxState);
-        return _this;
-      }
-
-      with_mobx_store__createClass(AppWithMobx, [{
-        key: "render",
-        value: function render() {
-          return external__react__default.a.createElement(App, _extends({}, this.props, {
-            mobxStore: this.mobxStore
-          }));
-        }
-      }]);
-
-      return AppWithMobx;
-    }(external__react__default.a.Component)
-  );
-});
-// EXTERNAL MODULE: external "mobx-react"
-var external__mobx_react_ = __webpack_require__(2);
-var external__mobx_react__default = /*#__PURE__*/__webpack_require__.n(external__mobx_react_);
-
-// CONCATENATED MODULE: ./pages/_app.js
-function _app__typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _app__typeof = function _typeof(obj) { return typeof obj; }; } else { _app__typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _app__typeof(obj); }
-
-function _app__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _app__defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _app__createClass(Constructor, protoProps, staticProps) { if (protoProps) _app__defineProperties(Constructor.prototype, protoProps); if (staticProps) _app__defineProperties(Constructor, staticProps); return Constructor; }
-
-function _app__possibleConstructorReturn(self, call) { if (call && (_app__typeof(call) === "object" || typeof call === "function")) { return call; } return _app__assertThisInitialized(self); }
-
-function _app__assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _app__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-var _app_PhotoLive =
-/*#__PURE__*/
-function (_App) {
-  _app__inherits(PhotoLive, _App);
-
-  function PhotoLive() {
-    _app__classCallCheck(this, PhotoLive);
-
-    return _app__possibleConstructorReturn(this, (PhotoLive.__proto__ || Object.getPrototypeOf(PhotoLive)).apply(this, arguments));
-  }
-
-  _app__createClass(PhotoLive, [{
-    key: "render",
-    value: function render() {
-      var _props = this.props,
-          Component = _props.Component,
-          pageProps = _props.pageProps,
-          mobxStore = _props.mobxStore;
-      return external__react__default.a.createElement(app_["Container"], null, external__react__default.a.createElement(external__mobx_react_["Provider"], {
-        store: mobxStore
-      }, external__react__default.a.createElement(Component, pageProps)));
-    }
-  }]);
-
-  return PhotoLive;
-}(app__default.a);
-
-/* harmony default export */ var _app = __webpack_exports__["default"] = (with_mobx_store(_app_PhotoLive));
 
 /***/ }),
-/* 18 */
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("./pages/_app.js");
+
+
+/***/ }),
+
+/***/ "@babel/runtime/regenerator":
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
+
+/***/ }),
+
+/***/ "axios":
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
+
+/***/ }),
+
+/***/ "mobx":
+/***/ (function(module, exports) {
+
+module.exports = require("mobx");
+
+/***/ }),
+
+/***/ "mobx-react":
+/***/ (function(module, exports) {
+
+module.exports = require("mobx-react");
+
+/***/ }),
+
+/***/ "next/app":
 /***/ (function(module, exports) {
 
 module.exports = require("next/app");
 
 /***/ }),
-/* 19 */
+
+/***/ "react":
 /***/ (function(module, exports) {
 
-module.exports = require("axios");
+module.exports = require("react");
 
 /***/ })
-/******/ ]);
+
+/******/ });
+//# sourceMappingURL=_app.js.map

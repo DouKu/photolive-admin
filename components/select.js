@@ -5,34 +5,40 @@ import { autobind } from 'core-decorators';
 @autobind
 class Select extends Component {
   componentWillMount () {
-    const { defaultValue } = this.props
+    const { defaultValue, defaultLabel } = this.props
     this.setState({
-      value: defaultValue
+      value: defaultValue,
+      label: defaultLabel
     })
   }
   
   constructor () {
     super();
     this.state = {
-      value: ''
+      value: '',
+      label: ''
     }
   }
   renderOptions () {
     const options = this.props.options || [];
-    return options.map((option, index) => {
+    return options.map((option) => {
       return (
-        <Option key={index} value={option.name}>{option.name}</Option>
+        <Option key={option.value} value={option.name}>{option.name}</Option>
       )
     })
   }
-  onSelect (value, option) {
+  onSelect (label, option) {
+    let value = parseInt(option.key);
+    console.log(option)
     this.setState({
-      value
-    })
+      value,
+      label
+    });
+    this.props.onChange(value, label);
   }
   render () {
     return (
-      <RcSelect value={this.state.value} 
+      <RcSelect value={this.state.label} 
         showSearch={false} 
         style={{minWidth: '100px'}}
         onSelect={this.onSelect}>
