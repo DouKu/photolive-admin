@@ -8,7 +8,10 @@ import TextArea from '../components/text-area';
 import Button from '../components/button';
 import Select from '../components/select';
 import { autobind } from 'core-decorators';
+import { inject, observer } from 'mobx-react';
 
+@inject('store')
+@observer
 @Page
 @Content
 @autobind
@@ -17,6 +20,8 @@ class Home extends Component {
     super();
     this.state = {
       themeId: 1,
+      name: '',
+      address: '',
       themeStyle: '一行三图'
     }
   }
@@ -26,7 +31,7 @@ class Home extends Component {
       { value: 2, name: '瀑布流' },
       { value: 3, name: '一行两图' }
     ];
-    const { themeId, themeStyle } = this.state;
+    const { themeId, themeStyle, name, address } = this.state;
     return (
       <div>
         <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
@@ -34,7 +39,7 @@ class Home extends Component {
         </TitleCard>
 
         <FormItem label="相册名字">
-          <Input placeholder="请输入相册名字"></Input>
+          <Input value={name} onChange={this.handleNameChange} placeholder="请输入相册名字"></Input>
         </FormItem>
 
         <FormItem label="活动时间">
@@ -43,7 +48,7 @@ class Home extends Component {
 
         <FormItem label="活动地点" 
           className="pl-block-label">
-          <TextArea placeholder="请填写活动地点"></TextArea>
+          <TextArea value={address} onChange={this.handelAddrChange} placeholder="请填写活动地点"></TextArea>
         </FormItem>
 
         <FormItem label="相册风格">
@@ -54,16 +59,27 @@ class Home extends Component {
           </Select>
         </FormItem>
         
-        <Button style={{marginTop: '10px'}}>保存设置</Button>
+        <Button onClick={this.handleSave} style={{marginTop: '10px'}}>保存设置</Button>
       </div>
     )
+  }
+  handleNameChange (value) {
+    this.setState({
+      name: value
+    });
+  }
+  handelAddrChange (value) {
+    this.setState({
+      address: value
+    });
   }
   handleStyleChange (themeId, themeStyle) {
     this.setState({
       themeId,
       themeStyle
     });
-    console.log(themeId, themeStyle, 'dddd');
+  }
+  handleSave () {
   }
 }
 

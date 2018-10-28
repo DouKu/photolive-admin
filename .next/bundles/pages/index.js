@@ -9,7 +9,10 @@ __NEXT_REGISTER_PAGE('/', function() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/_react@16.5.2@react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/button.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__("./node_modules/_core-decorators@0.20.0@core-decorators/es/core-decorators.js");
+var _class,
+    _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/button.js";
+
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -28,7 +31,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Button =
+
+var Button = Object(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["a" /* autobind */])(_class =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Button, _Component);
@@ -52,14 +56,14 @@ function (_Component) {
         className: "pl-button",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 7
+          lineNumber: 9
         }
       }, children);
     }
   }]);
 
   return Button;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class;
 
 /* harmony default export */ __webpack_exports__["a"] = (Button);
 
@@ -176,7 +180,10 @@ var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/h
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/_react@16.5.2@react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/input.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__("./node_modules/_core-decorators@0.20.0@core-decorators/es/core-decorators.js");
+var _class,
+    _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/input.js";
+
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -195,7 +202,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Input =
+
+var Input = Object(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["a" /* autobind */])(_class =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Input, _Component);
@@ -209,20 +217,29 @@ function (_Component) {
   _createClass(Input, [{
     key: "render",
     value: function render() {
-      var placeholder = this.props.placeholder;
+      var _props = this.props,
+          placeholder = _props.placeholder,
+          value = _props.value;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        value: value,
+        onChange: this.onChange,
         placeholder: placeholder,
         className: "pl-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 7
+          lineNumber: 9
         }
       });
+    }
+  }, {
+    key: "onChange",
+    value: function onChange(event) {
+      this.props.onChange && this.props.onChange(event.target.value);
     }
   }]);
 
   return Input;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class;
 
 /* harmony default export */ __webpack_exports__["a"] = (Input);
 
@@ -536,7 +553,10 @@ function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("./node_modules/_react@16.5.2@react/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/text-area.js";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__("./node_modules/_core-decorators@0.20.0@core-decorators/es/core-decorators.js");
+var _class,
+    _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/components/text-area.js";
+
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -555,7 +575,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var TextArea =
+
+var TextArea = Object(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["a" /* autobind */])(_class =
 /*#__PURE__*/
 function (_Component) {
   _inherits(TextArea, _Component);
@@ -569,20 +590,29 @@ function (_Component) {
   _createClass(TextArea, [{
     key: "render",
     value: function render() {
-      var placeholder = this.props.placeholder;
+      var _props = this.props,
+          placeholder = _props.placeholder,
+          value = _props.value;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", {
+        value: value,
+        onChange: this.onChange,
         placeholder: placeholder,
         className: "pl-text pl-text-area",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 7
+          lineNumber: 9
         }
       });
+    }
+  }, {
+    key: "onChange",
+    value: function onChange(event) {
+      this.props.onChange && this.props.onChange(event.target.value);
     }
   }]);
 
   return TextArea;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class;
 
 /* harmony default export */ __webpack_exports__["a"] = (TextArea);
 
@@ -20792,7 +20822,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_button__ = __webpack_require__("./components/button.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_select__ = __webpack_require__("./components/select.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_decorators__ = __webpack_require__("./node_modules/_core-decorators@0.20.0@core-decorators/es/core-decorators.js");
-var _class,
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_mobx_react__ = __webpack_require__("./node_modules/_mobx-react@5.2.8@mobx-react/index.module.js");
+var _dec,
+    _class,
     _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/pages/index.js";
 
 
@@ -20822,7 +20854,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Home = Object(__WEBPACK_IMPORTED_MODULE_1__layout_page__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_2__layout_content__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_9_core_decorators__["a" /* autobind */])(_class =
+var Home = (_dec = Object(__WEBPACK_IMPORTED_MODULE_10_mobx_react__["b" /* inject */])('store'), _dec(_class = Object(__WEBPACK_IMPORTED_MODULE_10_mobx_react__["c" /* observer */])(_class = Object(__WEBPACK_IMPORTED_MODULE_1__layout_page__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_2__layout_content__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_9_core_decorators__["a" /* autobind */])(_class =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Home, _Component);
@@ -20835,6 +20867,8 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
     _this.state = {
       themeId: 1,
+      name: '',
+      address: '',
       themeStyle: '一行三图'
     };
     return _this;
@@ -20855,61 +20889,67 @@ function (_Component) {
       }];
       var _state = this.state,
           themeId = _state.themeId,
-          themeStyle = _state.themeStyle;
+          themeStyle = _state.themeStyle,
+          name = _state.name,
+          address = _state.address;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 36
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_title_card__["a" /* default */], {
         desc: "\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD",
         title: "\u57FA\u7840\u914D\u7F6E",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 37
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 41
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_input__["a" /* default */], {
+        value: name,
+        onChange: this.handleNameChange,
         placeholder: "\u8BF7\u8F93\u5165\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 42
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u6D3B\u52A8\u65F6\u95F4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 45
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_input__["a" /* default */], {
         placeholder: "\u8BF7\u8F93\u5165\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 46
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u6D3B\u52A8\u5730\u70B9",
         className: "pl-block-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 49
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_text_area__["a" /* default */], {
+        value: address,
+        onChange: this.handelAddrChange,
         placeholder: "\u8BF7\u586B\u5199\u6D3B\u52A8\u5730\u70B9",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 51
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u76F8\u518C\u98CE\u683C",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 54
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_select__["a" /* default */], {
         defaultValue: themeId,
@@ -20918,17 +20958,32 @@ function (_Component) {
         onChange: this.handleStyleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 55
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_button__["a" /* default */], {
+        onClick: this.handleSave,
         style: {
           marginTop: '10px'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         }
       }, "\u4FDD\u5B58\u8BBE\u7F6E"));
+    }
+  }, {
+    key: "handleNameChange",
+    value: function handleNameChange(value) {
+      this.setState({
+        name: value
+      });
+    }
+  }, {
+    key: "handelAddrChange",
+    value: function handelAddrChange(value) {
+      this.setState({
+        address: value
+      });
     }
   }, {
     key: "handleStyleChange",
@@ -20937,13 +20992,14 @@ function (_Component) {
         themeId: themeId,
         themeStyle: themeStyle
       });
-      console.log(themeId, themeStyle, 'dddd');
     }
+  }, {
+    key: "handleSave",
+    value: function handleSave() {}
   }]);
 
   return Home;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class) || _class) || _class;
-
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class) || _class) || _class) || _class) || _class);
 /* harmony default export */ __webpack_exports__["default"] = (Home);
     (function (Component, route) {
       if(!Component) return

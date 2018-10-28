@@ -1,5 +1,7 @@
 import { Component } from 'react';
+import { autobind } from 'core-decorators';
 
+@autobind
 class Button extends Component {
   render () {
     const { children, style, onClick } = this.props;
