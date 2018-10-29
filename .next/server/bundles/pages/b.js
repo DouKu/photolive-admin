@@ -67,23 +67,37 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 48);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 48:
+/***/ 0:
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ 33:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(49);
+module.exports = __webpack_require__(34);
 
 
 /***/ }),
 
-/***/ 49:
-/***/ (function(module, exports) {
+/***/ 34:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = require("/Users/lgy/Documents/RoundTable/photolive-admin/node_modules/_next@6.1.2@next/dist/pages/_error.js");
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, "b");
+});
 
 /***/ })
 
