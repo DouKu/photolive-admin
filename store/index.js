@@ -1,5 +1,6 @@
 import { action, observable } from 'mobx'
 import Auth from './auth';
+import Album from './album';
 
 let store = null
 
@@ -9,6 +10,7 @@ class Store {
 
   constructor (isServer, lastUpdate) {
     this.auth = new Auth();
+    this.album = new Album();
     this.lastUpdate = lastUpdate;
   }
 

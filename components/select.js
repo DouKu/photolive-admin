@@ -21,11 +21,9 @@ class Select extends Component {
   }
   renderOptions () {
     const options = this.props.options || [];
-    return options.map((option) => {
-      return (
-        <Option key={option.value} value={option.name}>{option.name}</Option>
-      )
-    })
+    return options.map((option) => (
+      <Option key={option.value} value={option.name}>{option.name}</Option>
+    ))
   }
   onSelect (label, option) {
     let value = parseInt(option.key);

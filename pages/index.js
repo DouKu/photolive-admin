@@ -1,86 +1,83 @@
-import { Component } from 'react'
-import Page from '../layout/page'
-import Content from '../layout/content';
-import TitleCard from '../components/title-card';
-import FormItem from '../components/form-item';
-import Input from '../components/input';
-import TextArea from '../components/text-area';
-import Button from '../components/button';
-import Select from '../components/select';
+import { Component } from 'react';
+import Header from '../components/header';
+import Card from '../components/card';
+import '../styles/style.scss'
 import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
+import Auth from '../mixins/auth';
+import '../styles/style.scss'
+import Router from 'next/router';
 
+@Auth
 @inject('store')
 @observer
-@Page
-@Content
 @autobind
 class Home extends Component {
-  constructor () {
-    super();
-    this.state = {
-      themeId: 1,
-      name: '',
-      address: '',
-      themeStyle: '一行三图'
-    }
+  componentDidMount () {
+    this.props.store.album.getAlbums();
+  }
+  renderAlbums () {
+    const { albums } = this.props.store.album;
+    return albums.map((album, index) => {
+      return (      
+        <Card album={album}
+          onEdit={this.handleEdit}
+          onShowMenu={this.handleShowMenu}
+          onShowGraph={this.handleShowGraph}
+          onDelete={this.handleDelete}
+          key={index}>
+        </Card>
+      )
+    })
+  }
+  handleEdit (album) {
+    Router.push({
+      pathname: '/base',
+      query: {
+        id: album.id
+      } 
+    });
+  }
+  handleShowMenu (album) {
+    console.log(album, 'menu')
+  }
+  handleShowGraph (album) {
+    console.log(album, 'graph')
+  }
+  handleDelete (album) {
+    console.log(album, 'delete')
   }
   render () {
-    const styleOptions = [
-      { value: 1, name: '一行三图' },
-      { value: 2, name: '瀑布流' },
-      { value: 3, name: '一行两图' }
-    ];
-    const { themeId, themeStyle, name, address } = this.state;
+    const { albums, count } = this.props.store.album;
     return (
-      <div>
-        <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
-          title="基础配置">
-        </TitleCard>
-
-        <FormItem label="相册名字">
-          <Input value={name} onChange={this.handleNameChange} placeholder="请输入相册名字"></Input>
-        </FormItem>
-
-        <FormItem label="活动时间">
-          <Input placeholder="请输入相册名字"></Input>
-        </FormItem>
-
-        <FormItem label="活动地点" 
-          className="pl-block-label">
-          <TextArea value={address} onChange={this.handelAddrChange} placeholder="请填写活动地点"></TextArea>
-        </FormItem>
-
-        <FormItem label="相册风格">
-          <Select defaultValue={themeId}
-            defaultLabel = {themeStyle}
-            options={styleOptions}
-            onChange={this.handleStyleChange}>
-          </Select>
-        </FormItem>
-        
-        <Button onClick={this.handleSave} style={{marginTop: '10px'}}>保存设置</Button>
+      <div className="main">
+        <Header/>
+        <div className="page-container">
+          <div className="title-container">
+            <h4>{count}</h4>
+            <div className="search">
+              <i className="icon-search"></i>
+              <input placeholder="搜索相册"/>
+            </div>
+          </div>
+          <ul className="card-container">
+            <li>
+              <div className="card-add">
+                <i className="icon-add"></i>
+                <span>创建新相册</span>
+              </div>
+            </li>
+            {this.renderAlbums()}
+          </ul>
+        </div>
+        <div className="footer">
+          <div className="tip">
+            <span className="left"></span>没有更多了哦<span className="right"></span>
+          </div>
+        </div>
       </div>
     )
   }
-  handleNameChange (value) {
-    this.setState({
-      name: value
-    });
-  }
-  handelAddrChange (value) {
-    this.setState({
-      address: value
-    });
-  }
-  handleStyleChange (themeId, themeStyle) {
-    this.setState({
-      themeId,
-      themeStyle
-    });
-  }
-  handleSave () {
-  }
 }
 
-export default Home
+export default Home;

@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import router from 'next/router'
+import Router from 'next/router'
 
 class Sidebar extends Component {
   constructor () {
@@ -9,7 +9,7 @@ class Sidebar extends Component {
     }
   }
   componentDidMount () {
-    const pathname = router.pathname;
+    const pathname = Router.pathname;
     const menus = this.props.menus || [];
     for (let index in menus) {
       if (menus[index].route === pathname) {
@@ -39,7 +39,10 @@ class Sidebar extends Component {
     });
   }
   handleMenusClick (menu) {
-    router.push(menu.route);
+    Router.push({
+      pathname: menu.route,
+      query: Router.query
+    });
   }
   setMenuActive (index) {
     this.setState({

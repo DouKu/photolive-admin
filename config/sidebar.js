@@ -1,7 +1,7 @@
 export const menus = [
   {
     name: '基础配置',
-    route: '/'
+    route: '/base'
   },
   {
     name: '标签配置',

@@ -1,0 +1,72 @@
+.title-container {
+  position: relative;
+  h4 {
+      position: relative;
+      display: inline-block;
+      font-size: 72px;
+      color: #646466;
+      letter-spacing: 0;
+      &::before {
+          content: '个相册';
+          position: absolute;
+          display: inline-block;
+          font-size: 18px;
+          right: -70px;
+          bottom: 10px;
+      }
+  }
+  .search {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: inline-block;
+      width: 360px;
+      height: 40px;
+      padding: 10px 52px;
+      background: $mainTextColor;
+      box-shadow: 0 2px 4px 0 rgba(100,100,102,0.40);
+      border-radius: 100px;
+      input {
+          background: $mainTextColor;
+          outline: none;
+          border: 0;
+          font-size: 14px;
+          letter-spacing: 0;
+          color: $boxColor;
+          &::-webkit-input-placeholder {
+              color: $boxColor;
+          }
+      }
+  }
+}
+
+.footer {
+  margin-top: 50px;
+  margin-bottom: 193px;
+  height: 20px;
+  line-height: 20px;
+  .tip {
+      position: relative;
+      width: 480px;
+      margin: 0 auto;
+      text-align: center;
+      color: $borderColor;
+      span {
+          position: absolute;
+          height: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+          margin: 0;
+          display: inline-block;
+          width: 170px;
+          border: 1px solid $borderColor;
+      }
+      span.left {
+          left: 0;
+      }
+      span.right {
+          right: 0;
+      }
+  }
+}

@@ -1,0 +1,85 @@
+.card-container {
+  margin-top: 70px;
+  margin-right: -60px;
+  font-size: 0;
+  overflow: hidden;
+  &>li {
+      display: inline-block;
+      padding-right: 60px;
+      padding-bottom: 90px;
+  }
+  .card {
+      display: inline-block;
+      width: 234px;
+      height: 308px;
+      border-radius: 6px;
+      overflow: hidden;
+  }
+  .card-add {
+      @extend .card;
+      border: 4px dashed $borderColor;
+      span {
+          display: inline-block;
+          color: $borderColor;
+          margin-top: 58px;
+          margin-left: 50%;
+          transform: translateX(-50%);
+          font-size: 18px;
+      }
+      &:hover {
+          .icon-add {
+              background-image: url(/static/img/svg/add.svg);
+          }
+      }
+  }
+  .card-item {
+      position: relative;
+      box-shadow: 0 20px 6px -10px rgba(0,0,0,.23), 0 40px 6px -20px rgba(0,0,0,.16);
+      overflow: hidden;
+      @extend .card;
+      img  {
+          width: auto;
+          height: auto;
+          max-width: 200%;
+          max-height: 200%;
+      }
+      .card-footer-base {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          font-size: 14px;
+          color: $boxColor;
+          background: rgba(0,0,0,0.50);
+      }
+      .card-footer {
+          @extend .card-footer-base;
+          opacity: 1;
+          transition: all .6s cubic-bezier(0.075, 0.82, 0.165, 1) .1s;
+      }
+      .card-footer-btns {
+          @extend .card-footer-base;
+          bottom: -60px;
+          padding: 13px 0;
+          font-size: 0;
+          margin-right: -47px;
+          transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          li {
+              display: inline-block;
+              padding-right: 34.5px;
+          }
+      }
+      &:hover {
+          .card-footer {
+              opacity: 0;
+          }
+          .card-footer-btns {
+              display: block;
+              bottom: 0;
+          }
+      }
+  }
+}

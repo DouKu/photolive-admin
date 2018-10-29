@@ -36,3 +36,61 @@
   @extend .icon;
   background-image: url(/static/img/svg/down-disabled.svg);
 }
+
+
+.home-icon {
+  display: inline-block;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.icon-search {
+  @extend .home-icon;
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url(/static/img/svg/search.svg);
+}
+
+.icon-add {
+  @extend .home-icon;
+  margin-left: 50%;
+  margin-top: 82px;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 72px;
+  background-image: url(/static/img/svg/add.svg);
+}
+
+.card-footer-icon {
+  width: 23.5px;
+  height: 23.5px;
+}
+
+.icon-edit {
+  @extend .home-icon;
+  @extend .card-footer-icon;
+  background-image: url(/static/img/svg/edit.svg);
+}
+
+.icon-menu {
+  @extend .home-icon;
+  @extend .card-footer-icon;
+  background-image: url(/static/img/svg/menu.svg);
+}
+
+.icon-delete {
+  @extend .home-icon;
+  @extend .card-footer-icon;
+  background-image: url(/static/img/svg/delete.svg);
+}
+
+.icon-graph {
+  @extend .home-icon;
+  @extend .card-footer-icon;
+  background-image: url(/static/img/svg/graph.svg);
+}
