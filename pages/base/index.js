@@ -9,11 +9,13 @@ import Button from '../../components/button';
 import Select from '../../components/select';
 import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
+import Router from 'next/router';
+import DatePicker from '../../components/date-picker';
 
-@inject('store')
-@observer
 @Page
 @Content
+@inject('store')
+@observer
 @autobind
 class Base extends Component {
   constructor () {
@@ -21,8 +23,8 @@ class Base extends Component {
     this.state = {
       themeId: 1,
       name: '',
-      address: '',
-      themeStyle: '一行三图'
+      activityTime: Date.now(),
+      location: ''
     }
   }
   render () {
@@ -31,7 +33,7 @@ class Base extends Component {
       { value: 2, name: '瀑布流' },
       { value: 3, name: '一行两图' }
     ];
-    const { themeId, themeStyle, name, address } = this.state;
+    const { themeId, name, location } = this.state;
     return (
       <div>
         <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
@@ -43,17 +45,18 @@ class Base extends Component {
         </FormItem>
 
         <FormItem label="活动时间">
-          <Input placeholder="请输入相册名字"></Input>
+          <DatePicker default={new Date()} onChange={this.handleActivityTimeChange}></DatePicker>
         </FormItem>
 
         <FormItem label="活动地点" 
           className="pl-block-label">
-          <TextArea value={address} onChange={this.handelAddrChange} placeholder="请填写活动地点"></TextArea>
+          <TextArea value={location} onChange={this.handelAddrChange} placeholder="请填写活动地点"></TextArea>
         </FormItem>
 
         <FormItem label="相册风格">
           <Select defaultValue={themeId}
-            defaultLabel = {themeStyle}
+            style={{minWidth: '80px'}}
+            defaultLabel='一行三图'
             options={styleOptions}
             onChange={this.handleStyleChange}>
           </Select>
@@ -70,16 +73,33 @@ class Base extends Component {
   }
   handelAddrChange (value) {
     this.setState({
-      address: value
+      location: value
     });
   }
-  handleStyleChange (themeId, themeStyle) {
+  handleStyleChange (themeId) {
     this.setState({
-      themeId,
-      themeStyle
+      themeId
+    });
+  }
+  handleActivityTimeChange (time) {
+    this.setState({
+      activityTime: time.getTime()
     });
   }
   handleSave () {
+    const albumId = Router.query.id;
+    const { name, location, themeId, activityTime } = this.state;
+    this.props.store.baseConfig.putConfig({
+      params: {
+        albumId
+      },
+      data: {
+        name,
+        activityTime,
+        location,
+        themeId
+      }
+    });
   }
 }
 

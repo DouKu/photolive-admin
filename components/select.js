@@ -27,7 +27,6 @@ class Select extends Component {
   }
   onSelect (label, option) {
     let value = parseInt(option.key);
-    console.log(option)
     this.setState({
       value,
       label
@@ -38,7 +37,7 @@ class Select extends Component {
     return (
       <RcSelect value={this.state.label} 
         showSearch={false} 
-        style={{minWidth: '100px'}}
+        style={this.props.style}
         onSelect={this.onSelect}>
         {this.renderOptions()}
       </RcSelect>

@@ -67,24 +67,25 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 47);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 47:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(48);
-
-
-/***/ }),
-
-/***/ 48:
+/***/ "/Users/lgy/Documents/RoundTable/photolive-admin/node_modules/_next@6.1.2@next/dist/pages/_error.js":
 /***/ (function(module, exports) {
 
 module.exports = require("/Users/lgy/Documents/RoundTable/photolive-admin/node_modules/_next@6.1.2@next/dist/pages/_error.js");
 
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("/Users/lgy/Documents/RoundTable/photolive-admin/node_modules/_next@6.1.2@next/dist/pages/_error.js");
+
+
 /***/ })
 
 /******/ });
+//# sourceMappingURL=_error.js.map
