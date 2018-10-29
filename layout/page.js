@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar';
 import SideTag from '../components/side-tag';
 import { menus } from '../config/sidebar';
 import Auth from '../mixins/auth';
-
+import Notifications from 'react-notify-toast';
 import '../styles/style.scss'
 
 const Page = (Content) => {
@@ -23,6 +23,7 @@ const Page = (Content) => {
               <Content/>
             </div>
           </div>
+          <Notifications></Notifications>
         </div>
       );
     }

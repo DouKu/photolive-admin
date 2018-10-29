@@ -11,6 +11,7 @@ import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
 import Router from 'next/router';
 import DatePicker from '../../components/date-picker';
+import { notify } from 'react-notify-toast';
 
 @Page
 @Content
@@ -99,7 +100,11 @@ class Base extends Component {
         location,
         themeId
       }
-    });
+    }).then(() => {
+      notify.show('修改成功!', 'custom', 2000, {
+        background: '#ffffff', text: "#646466"
+      });
+    })
   }
 }
 

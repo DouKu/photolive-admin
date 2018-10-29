@@ -1068,8 +1068,10 @@ var Content = function Content(Manage) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_side_tag__ = __webpack_require__("./components/side-tag.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__config_sidebar__ = __webpack_require__("./config/sidebar.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mixins_auth__ = __webpack_require__("./mixins/auth.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__styles_style_scss__ = __webpack_require__("./styles/style.scss");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__styles_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__styles_style_scss__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_notify_toast__ = __webpack_require__("react-notify-toast");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_notify_toast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_notify_toast__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_style_scss__ = __webpack_require__("./styles/style.scss");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__styles_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__styles_style_scss__);
 var _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/layout/page.js";
 
 
@@ -1086,6 +1088,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1157,7 +1160,12 @@ var Page = function Page(Content) {
             fileName: _jsxFileName,
             lineNumber: 23
           }
-        }))));
+        }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_notify_toast___default.a, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
+          }
+        }));
       }
     }]);
 
@@ -1271,6 +1279,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_next_router__ = __webpack_require__("next/router");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_next_router__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_date_picker__ = __webpack_require__("./components/date-picker.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_react_notify_toast__ = __webpack_require__("react-notify-toast");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_react_notify_toast___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_react_notify_toast__);
 var _dec,
     _class,
     _jsxFileName = "/Users/lgy/Documents/RoundTable/photolive-admin/pages/base/index.js";
@@ -1290,6 +1300,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -1344,20 +1355,20 @@ function (_Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_title_card__["a" /* default */], {
         desc: "\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD",
         title: "\u57FA\u7840\u914D\u7F6E",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 40
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 44
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_input__["a" /* default */], {
         value: name,
@@ -1365,27 +1376,27 @@ function (_Component) {
         placeholder: "\u8BF7\u8F93\u5165\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u6D3B\u52A8\u65F6\u95F4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 48
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__components_date_picker__["a" /* default */], {
         "default": new Date(),
         onChange: this.handleActivityTimeChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 49
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u6D3B\u52A8\u5730\u70B9",
         className: "pl-block-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_text_area__["a" /* default */], {
         value: location,
@@ -1393,13 +1404,13 @@ function (_Component) {
         placeholder: "\u8BF7\u586B\u5199\u6D3B\u52A8\u5730\u70B9",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 54
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u76F8\u518C\u98CE\u683C",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 57
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_select__["a" /* default */], {
         defaultValue: themeId,
@@ -1411,7 +1422,7 @@ function (_Component) {
         onChange: this.handleStyleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 58
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_button__["a" /* default */], {
         onClick: this.handleSave,
@@ -1420,7 +1431,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 66
         }
       }, "\u4FDD\u5B58\u8BBE\u7F6E"));
     }
@@ -1471,6 +1482,11 @@ function (_Component) {
           location: location,
           themeId: themeId
         }
+      }).then(function () {
+        __WEBPACK_IMPORTED_MODULE_13_react_notify_toast__["notify"].show('修改成功!', 'custom', 2000, {
+          background: '#ffffff',
+          text: "#646466"
+        });
       });
     }
   }]);
@@ -1562,6 +1578,13 @@ module.exports = require("rc-select");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-notify-toast":
+/***/ (function(module, exports) {
+
+module.exports = require("react-notify-toast");
 
 /***/ })
 

@@ -8006,7 +8006,7 @@ function () {
               case 2:
                 _ref = _context.sent;
                 res = _ref.data;
-                console.log(res);
+                return _context.abrupt("return", res);
 
               case 5:
               case "end":
