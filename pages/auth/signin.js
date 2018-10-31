@@ -3,7 +3,9 @@ import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
 import Router from 'next/router';
 
-@inject('store')
+@inject(({store}) => ({
+  auth: store.auth
+}))
 @observer
 @autobind
 class SignIn extends Component {
@@ -25,7 +27,7 @@ class SignIn extends Component {
     });
   }
   handleSignIn () {
-    this.props.store.auth.signIn({
+    this.props.auth.signIn({
       ...this.state
     }).then(res => {
       if (res.code === 200) {

@@ -3,7 +3,9 @@ import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
 import Router from 'next/router';
 
-@inject('store')
+@inject(({store}) => ({
+  tagConfig: store.tagConfig
+}))
 @observer
 @autobind
 class SignUp extends Component {
@@ -37,7 +39,7 @@ class SignUp extends Component {
     });
   }
   handleSignUp () {
-    this.props.store.auth.signUp({
+    this.props.auth.signUp({
       ...this.state
     }).then(res => {
       Router.replace('/auth/signin');
