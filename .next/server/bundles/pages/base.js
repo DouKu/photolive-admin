@@ -1325,7 +1325,12 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var Base = (_dec = Object(__WEBPACK_IMPORTED_MODULE_10_mobx_react__["inject"])('store'), Object(__WEBPACK_IMPORTED_MODULE_1__layout_page__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_2__layout_content__["a" /* default */])(_class = _dec(_class = Object(__WEBPACK_IMPORTED_MODULE_10_mobx_react__["observer"])(_class = Object(__WEBPACK_IMPORTED_MODULE_9_core_decorators__["autobind"])(_class =
+var Base = (_dec = Object(__WEBPACK_IMPORTED_MODULE_10_mobx_react__["inject"])(function (_ref) {
+  var store = _ref.store;
+  return {
+    baseConfig: store.baseConfig
+  };
+}), Object(__WEBPACK_IMPORTED_MODULE_1__layout_page__["a" /* default */])(_class = Object(__WEBPACK_IMPORTED_MODULE_2__layout_content__["a" /* default */])(_class = _dec(_class = Object(__WEBPACK_IMPORTED_MODULE_10_mobx_react__["observer"])(_class = Object(__WEBPACK_IMPORTED_MODULE_9_core_decorators__["autobind"])(_class =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Base, _Component);
@@ -1339,7 +1344,7 @@ function (_Component) {
   _createClass(Base, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.store.baseConfig.getBaseConfig({
+      this.props.baseConfig.getBaseConfig({
         params: {
           albumId: __WEBPACK_IMPORTED_MODULE_11_next_router___default.a.query.id
         }
@@ -1358,27 +1363,27 @@ function (_Component) {
         value: 3,
         name: '一行两图'
       }];
-      var _props$store$baseConf = this.props.store.baseConfig.base,
-          themeId = _props$store$baseConf.themeId,
-          name = _props$store$baseConf.name,
-          location = _props$store$baseConf.location;
+      var _props$baseConfig$bas = this.props.baseConfig.base,
+          themeId = _props$baseConfig$bas.themeId,
+          name = _props$baseConfig$bas.name,
+          location = _props$baseConfig$bas.location;
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 37
+          lineNumber: 39
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_title_card__["a" /* default */], {
         desc: "\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD\u4E00\u4E9B\u4ECB\u7ECD",
         title: "\u57FA\u7840\u914D\u7F6E",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 40
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 44
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_input__["a" /* default */], {
         value: name,
@@ -1386,27 +1391,27 @@ function (_Component) {
         placeholder: "\u8BF7\u8F93\u5165\u76F8\u518C\u540D\u5B57",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 45
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u6D3B\u52A8\u65F6\u95F4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 48
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_12__components_date_picker__["a" /* default */], {
         "default": new Date(),
         onChange: this.handleActivityTimeChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 49
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u6D3B\u52A8\u5730\u70B9",
         className: "pl-block-label",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 52
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_text_area__["a" /* default */], {
         value: location,
@@ -1414,25 +1419,25 @@ function (_Component) {
         placeholder: "\u8BF7\u586B\u5199\u6D3B\u52A8\u5730\u70B9",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 54
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_form_item__["a" /* default */], {
         label: "\u76F8\u518C\u98CE\u683C",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 57
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_select__["a" /* default */], {
         defaultValue: themeId,
         style: {
           minWidth: '80px'
         },
-        defaultLabel: this.props.store.baseConfig.defaultLabel,
+        defaultLabel: this.props.baseConfig.defaultLabel,
         options: styleOptions,
         onChange: this.handleStyleChange,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 58
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_button__["a" /* default */], {
         onClick: this.handleSave,
@@ -1441,30 +1446,30 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 66
         }
       }, "\u4FDD\u5B58\u8BBE\u7F6E"));
     }
   }, {
     key: "handleNameChange",
     value: function handleNameChange(value) {
-      this.props.store.baseConfig.base.name = value;
+      this.props.baseConfig.base.name = value;
     }
   }, {
     key: "handelAddrChange",
     value: function handelAddrChange(value) {
-      this.props.store.baseConfig.base.location = value;
+      this.props.baseConfig.base.location = value;
     }
   }, {
     key: "handleStyleChange",
     value: function handleStyleChange(value) {
-      this.props.store.baseConfig.base.themeId = value;
+      this.props.baseConfig.base.themeId = value;
     }
   }, {
     key: "handleActivityTimeChange",
     value: function handleActivityTimeChange(value) {
       value = value.getTime();
-      this.props.store.baseConfig.base.activityTime = value;
+      this.props.baseConfig.base.activityTime = value;
     }
   }, {
     key: "handleSave",
@@ -1472,12 +1477,12 @@ function (_Component) {
       var _this = this;
 
       var albumId = __WEBPACK_IMPORTED_MODULE_11_next_router___default.a.query.id;
-      var _props$store$baseConf2 = this.props.store.baseConfig.base,
-          name = _props$store$baseConf2.name,
-          location = _props$store$baseConf2.location,
-          themeId = _props$store$baseConf2.themeId,
-          activityTime = _props$store$baseConf2.activityTime;
-      this.props.store.baseConfig.putBaseConfig({
+      var _props$baseConfig$bas2 = this.props.baseConfig.base,
+          name = _props$baseConfig$bas2.name,
+          location = _props$baseConfig$bas2.location,
+          themeId = _props$baseConfig$bas2.themeId,
+          activityTime = _props$baseConfig$bas2.activityTime;
+      this.props.baseConfig.putBaseConfig({
         params: {
           albumId: albumId
         },
@@ -1493,7 +1498,7 @@ function (_Component) {
           text: "#646466"
         });
 
-        _this.props.store.baseConfig.getBaseConfig();
+        _this.props.baseConfig.getBaseConfig();
       });
     }
   }]);

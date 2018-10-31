@@ -11,7 +11,9 @@ import Router from 'next/router';
 
 @Page
 @Content
-@inject('store')
+@inject(({store}) => ({
+    tagConfig: store.tagConfig
+}))
 @autobind
 class Tag extends Component {
   constructor () {
@@ -22,7 +24,7 @@ class Tag extends Component {
   }
 
   componentDidMount () {
-    this.props.store.tagConfig.getTagConfig({
+    this.props.tagConfig.getTagConfig({
       params: {
         albumId: Router.query.id
       }
@@ -30,7 +32,7 @@ class Tag extends Component {
   }
 
   handleAddTag () {
-    this.props.store.tagConfig.postTagConfig({
+    this.props.tagConfig.postTagConfig({
       params: {
         albumId: Router.query.id
       },
