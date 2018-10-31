@@ -5,7 +5,7 @@ export const menus = [
   },
   {
     name: '标签配置',
-    route: '/display/label'
+    route: '/display/tag'
   },
   {
     name: '轮播配置',

@@ -5,10 +5,47 @@ import TitleCard from '../../components/title-card';
 import LabelContainer from '../../components/label-container';
 import LabelInput from '../../components/label-input';
 import Button from '../../components/button';
+import { inject } from 'mobx-react';
+import { autobind } from 'core-decorators';
+import Router from 'next/router';
 
 @Page
 @Content
-class Label extends Component {
+@inject('store')
+@autobind
+class Tag extends Component {
+  constructor () {
+    super();
+    this.state = {
+      title: ''
+    }
+  }
+
+  componentDidMount () {
+    this.props.store.tagConfig.getTagConfig({
+      params: {
+        albumId: Router.query.id
+      }
+    });
+  }
+
+  handleAddTag () {
+    this.props.store.tagConfig.postTagConfig({
+      params: {
+        albumId: Router.query.id
+      },
+      data: {
+        title: this.state.title
+      }
+    });
+  }
+
+  handleInputTag (value) {
+    this.setState({
+      title: value
+    });
+  }
+  
   render () {
     return (
       <div>
@@ -27,7 +64,10 @@ class Label extends Component {
           last={true}>
         </LabelContainer>
         
-        <LabelInput placeholder="请输入标签名称"></LabelInput>
+        <LabelInput placeholder="请输入标签名称" 
+          onChange={this.handleInputTag} 
+          onClick={this.handleAddTag}>
+        </LabelInput>
 
         <Button style={{marginTop: '10px'}}>
           保存设置
@@ -37,4 +77,4 @@ class Label extends Component {
   }
 }
 
-export default Label;
+export default Tag;

@@ -32,7 +32,7 @@ class Base extends Component {
       { value: 2, name: '瀑布流' },
       { value: 3, name: '一行两图' }
     ];
-    const { themeId, name, location } = this.props.store.baseConfig.baseConfig;
+    const { themeId, name, location } = this.props.store.baseConfig.base;
     return (
       <div>
         <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
@@ -66,21 +66,21 @@ class Base extends Component {
     )
   }
   handleNameChange (value) {
-    this.props.store.baseConfig.baseConfig.name = value;
+    this.props.store.baseConfig.base.name = value;
   }
   handelAddrChange (value) {
-    this.props.store.baseConfig.baseConfig.location = value;
+    this.props.store.baseConfig.base.location = value;
   }
   handleStyleChange (value) {
-    this.props.store.baseConfig.baseConfig.themeId = value;
+    this.props.store.baseConfig.base.themeId = value;
   }
   handleActivityTimeChange (value) {
     value = value.getTime();
-    this.props.store.baseConfig.baseConfig.activityTime = value;
+    this.props.store.baseConfig.base.activityTime = value;
   }
   handleSave () {
     const albumId = Router.query.id;
-    const { name, location, themeId, activityTime } = this.props.store.baseConfig.baseConfig;
+    const { name, location, themeId, activityTime } = this.props.store.baseConfig.base;
     this.props.store.baseConfig.putBaseConfig({
       params: {
         albumId

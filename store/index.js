@@ -2,6 +2,7 @@ import { action, observable } from 'mobx'
 import Auth from './auth';
 import Album from './album';
 import BaseConfig from './base-config';
+import TagConfig from './tag-config';
 
 let store = null
 
@@ -13,6 +14,7 @@ class Store {
     this.auth = new Auth();
     this.album = new Album();
     this.baseConfig = new BaseConfig();
+    this.tagConfig = new TagConfig();
     this.lastUpdate = lastUpdate;
   }
 

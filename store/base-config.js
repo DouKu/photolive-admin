@@ -3,7 +3,7 @@ import api from '../api/base-config';
 import { styleMap } from '../lib/enums';
 
 class BaseConfig {
-  @observable baseConfig = {
+  @observable base = {
     id: 0,
     themeId: 1,
     name: '',
@@ -11,7 +11,7 @@ class BaseConfig {
     location: ''
   };
   @computed get defaultLabel () {
-    return styleMap[this.baseConfig.themeId - 1];
+    return styleMap[this.base.themeId - 1];
   }
   @action async putBaseConfig (data) {
     const { data: res } = await api.putBaseConfig(data);
@@ -20,7 +20,7 @@ class BaseConfig {
   @action async getBaseConfig (data) {
     const { data: res } = await api.getBaseConfig(data);
     runInAction(() => {
-      this.baseConfig = res.data;
+      this.base = res.data;
     })
     return res;
   }

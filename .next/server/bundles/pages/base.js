@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -974,7 +974,7 @@ var menus = [{
   route: '/base'
 }, {
   name: '标签配置',
-  route: '/display/label'
+  route: '/display/tag'
 }, {
   name: '轮播配置',
   route: '/display/banner'
@@ -1358,7 +1358,7 @@ function (_Component) {
         value: 3,
         name: '一行两图'
       }];
-      var _props$store$baseConf = this.props.store.baseConfig.baseConfig,
+      var _props$store$baseConf = this.props.store.baseConfig.base,
           themeId = _props$store$baseConf.themeId,
           name = _props$store$baseConf.name,
           location = _props$store$baseConf.location;
@@ -1448,23 +1448,23 @@ function (_Component) {
   }, {
     key: "handleNameChange",
     value: function handleNameChange(value) {
-      this.props.store.baseConfig.baseConfig.name = value;
+      this.props.store.baseConfig.base.name = value;
     }
   }, {
     key: "handelAddrChange",
     value: function handelAddrChange(value) {
-      this.props.store.baseConfig.baseConfig.location = value;
+      this.props.store.baseConfig.base.location = value;
     }
   }, {
     key: "handleStyleChange",
     value: function handleStyleChange(value) {
-      this.props.store.baseConfig.baseConfig.themeId = value;
+      this.props.store.baseConfig.base.themeId = value;
     }
   }, {
     key: "handleActivityTimeChange",
     value: function handleActivityTimeChange(value) {
       value = value.getTime();
-      this.props.store.baseConfig.baseConfig.activityTime = value;
+      this.props.store.baseConfig.base.activityTime = value;
     }
   }, {
     key: "handleSave",
@@ -1472,7 +1472,7 @@ function (_Component) {
       var _this = this;
 
       var albumId = __WEBPACK_IMPORTED_MODULE_11_next_router___default.a.query.id;
-      var _props$store$baseConf2 = this.props.store.baseConfig.baseConfig,
+      var _props$store$baseConf2 = this.props.store.baseConfig.base,
           name = _props$store$baseConf2.name,
           location = _props$store$baseConf2.location,
           themeId = _props$store$baseConf2.themeId,
@@ -1545,7 +1545,7 @@ var range = function range(size) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/base/index.js");
