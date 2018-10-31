@@ -1,6 +1,6 @@
 import http from '../lib/http';
 
-const saveBaseConfig = ({ data, params }) => {
+const putBaseConfig = ({ data, params }) => {
   return http.request({
     url: `/auth/album/cfg/base/${params.albumId}`,
     method: 'put',
@@ -8,6 +8,14 @@ const saveBaseConfig = ({ data, params }) => {
   });
 }
 
+const getBaseConfig = ({ params }) => {
+  return http.request({
+    url: `/auth/album/cfg/base/${params.albumId}`,
+    method: 'get'
+  });
+}
+
 export default {
-  saveBaseConfig
+  getBaseConfig,
+  putBaseConfig
 }

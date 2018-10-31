@@ -19,14 +19,12 @@ import { notify } from 'react-notify-toast';
 @observer
 @autobind
 class Base extends Component {
-  constructor () {
-    super();
-    this.state = {
-      themeId: 1,
-      name: '',
-      activityTime: Date.now(),
-      location: ''
-    }
+  componentDidMount () {
+    this.props.store.baseConfig.getBaseConfig({
+      params: {
+        albumId: Router.query.id
+      }
+    })
   }
   render () {
     const styleOptions = [
@@ -34,7 +32,7 @@ class Base extends Component {
       { value: 2, name: '瀑布流' },
       { value: 3, name: '一行两图' }
     ];
-    const { themeId, name, location } = this.state;
+    const { themeId, name, location } = this.props.store.baseConfig.baseConfig;
     return (
       <div>
         <TitleCard desc="一些介绍一些介绍一些介绍一些介绍一一些介绍一些介绍一些介绍一些介绍"
@@ -57,7 +55,7 @@ class Base extends Component {
         <FormItem label="相册风格">
           <Select defaultValue={themeId}
             style={{minWidth: '80px'}}
-            defaultLabel='一行三图'
+            defaultLabel={this.props.store.baseConfig.defaultLabel}
             options={styleOptions}
             onChange={this.handleStyleChange}>
           </Select>
@@ -68,29 +66,22 @@ class Base extends Component {
     )
   }
   handleNameChange (value) {
-    this.setState({
-      name: value
-    });
+    this.props.store.baseConfig.baseConfig.name = value;
   }
   handelAddrChange (value) {
-    this.setState({
-      location: value
-    });
+    this.props.store.baseConfig.baseConfig.location = value;
   }
-  handleStyleChange (themeId) {
-    this.setState({
-      themeId
-    });
+  handleStyleChange (value) {
+    this.props.store.baseConfig.baseConfig.themeId = value;
   }
-  handleActivityTimeChange (time) {
-    this.setState({
-      activityTime: time.getTime()
-    });
+  handleActivityTimeChange (value) {
+    value = value.getTime();
+    this.props.store.baseConfig.baseConfig.activityTime = value;
   }
   handleSave () {
     const albumId = Router.query.id;
-    const { name, location, themeId, activityTime } = this.state;
-    this.props.store.baseConfig.putConfig({
+    const { name, location, themeId, activityTime } = this.props.store.baseConfig.baseConfig;
+    this.props.store.baseConfig.putBaseConfig({
       params: {
         albumId
       },
@@ -104,6 +95,7 @@ class Base extends Component {
       notify.show('修改成功!', 'custom', 2000, {
         background: '#ffffff', text: "#646466"
       });
+      this.props.store.baseConfig.getBaseConfig();
     })
   }
 }

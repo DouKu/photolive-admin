@@ -5,11 +5,19 @@ import { autobind } from 'core-decorators';
 @autobind
 class Select extends Component {
   componentWillMount () {
-    const { defaultValue, defaultLabel } = this.props
+    const { defaultValue, defaultLabel } = this.props;
     this.setState({
       value: defaultValue,
       label: defaultLabel
-    })
+    });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { defaultValue, defaultLabel } = nextProps;
+    this.setState({
+      value: defaultValue,
+      label: defaultLabel
+    });
   }
   
   constructor () {
