@@ -10,7 +10,7 @@ import ImageUpload from '../../components/upload/image-upload';
 
 @Page
 @Content
-class Propaganda extends Component {
+class Share extends Component {
   render () {
     return (
       <div>
@@ -23,7 +23,14 @@ class Propaganda extends Component {
           <Input placeholder="默认为相册名字"></Input>
         </FormItem>
 
-        <ImageUpload></ImageUpload>
+        <ImageUpload
+          title="分享图片"
+          tip="推荐尺寸："
+          subTip="1080（宽）*1920（高）这是微信分享的适合尺寸，显示的效果会更好"
+          leftButtonText="更换图片"
+          rightButtonText="默认图片">
+          <a>模板下载</a>
+        </ImageUpload>
 
         <FormItem label="分享文案"
           className="pl-block-label">
@@ -38,4 +45,4 @@ class Propaganda extends Component {
   }
 }
 
-export default Propaganda;
+export default Share;

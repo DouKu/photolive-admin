@@ -1,23 +1,58 @@
 import { Component } from 'react';
 import Button from '../button';
+import { autobind } from 'core-decorators';
 
+@autobind
 class ImageUpload extends Component {
+  constructor () {
+    super();
+    this.state = {
+      showWrap: false
+    }
+  }
+  handleMouseEnter () {
+    this.setState({
+      showWrap: true
+    })
+  }
+  handleMouseLeave () {
+    this.setState({
+      showWrap: false
+    })
+  }
   render () {
+    const {
+      title,
+      tip,
+      subTip,
+      leftButtonText,
+      rightButtonText,
+      children
+    } = this.props;
+    const { showWrap } = this.state;
     return (
       <div className="pl-image-upload">
-        <div className="pl-image-box">
+        <div className="pl-image-box"
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}>
           <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538724429190&di=a19c8af52284c5a8993984684d1e82e6&imgtype=0&src=http%3A%2F%2Fp2.pccoo.cn%2Fstore%2F20150416%2F20150416141412170.jpg"></img>
+          {
+            showWrap && 
+            <div className="wrap">
+              <div>更换图片</div>
+            </div>
+          }
         </div>
         <div className="pl-image-content">
-          <h3>分享图片</h3>
-          <p>推荐尺寸：<br/>
-          1080（宽）*1920（高）这是微信分享的适合尺寸，显示的效果会更好</p>
+          <h3>{title}</h3>
+          <p>{tip}<br/>
+          {subTip}</p>
           <div className="action">
-            <a>模板下载</a>
+            {children}
           </div>
           <div className="action-btns">
-            <Button>更换图片</Button>
-            <Button>默认图片</Button>
+            <Button>{leftButtonText}</Button>
+            <Button>{rightButtonText}</Button>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ class BannerItem extends Component {
       'down-btn': true,
       'down-btn-disabled': last
     });
-    const showWrap = this.state.showWrap;
+    const { showWrap } = this.state;
     return (
       <div className="banner-container">
         <div className="left-container" 

@@ -22,5 +22,9 @@ export const menus = [
   {
     name: '其他配置',
     route: '/extra'
+  },
+  {
+    name: '启动页设置',
+    route: '/display/startup'
   }
 ]
