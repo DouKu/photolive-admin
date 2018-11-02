@@ -55,6 +55,27 @@ var signIn = function signIn(_ref2) {
 
 /***/ }),
 
+/***/ "./api/banner-config.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lib_http__ = __webpack_require__("./lib/http.js");
+
+
+var getBannerConfig = function getBannerConfig(_ref) {
+  var params = _ref.params;
+  return __WEBPACK_IMPORTED_MODULE_0__lib_http__["a" /* default */].request({
+    url: "/auth/album/cfg/banner/".concat(params.albumId),
+    method: 'get'
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  getBannerConfig: getBannerConfig
+});
+
+/***/ }),
+
 /***/ "./api/base-config.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -112,9 +133,18 @@ var postTagConfig = function postTagConfig(_ref2) {
   });
 };
 
+var deleteTagConfig = function deleteTagConfig(_ref3) {
+  var params = _ref3.params;
+  return __WEBPACK_IMPORTED_MODULE_0__lib_http__["a" /* default */].request({
+    url: "/auth/album/cfg/tag/".concat(params.tagId),
+    method: 'delete'
+  });
+};
+
 /* harmony default export */ __webpack_exports__["a"] = ({
   getTagConfig: getTagConfig,
-  postTagConfig: postTagConfig
+  postTagConfig: postTagConfig,
+  deleteTagConfig: deleteTagConfig
 });
 
 /***/ }),
@@ -7996,6 +8026,130 @@ function () {
 
 /***/ }),
 
+/***/ "./store/banner-config.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("./node_modules/_@babel_runtime@7.0.0-beta.42@@babel/runtime/regenerator/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_mobx__ = __webpack_require__("./node_modules/_mobx@5.5.0@mobx/lib/mobx.module.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_banner_config__ = __webpack_require__("./api/banner-config.js");
+
+
+var _desc, _value, _class, _descriptor;
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } } function _next(value) { step("next", value); } function _throw(err) { step("throw", err); } _next(); }); }; }
+
+function _initDefineProp(target, property, descriptor, context) {
+  if (!descriptor) return;
+  Object.defineProperty(target, property, {
+    enumerable: descriptor.enumerable,
+    configurable: descriptor.configurable,
+    writable: descriptor.writable,
+    value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+  });
+}
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+  var desc = {};
+  Object['ke' + 'ys'](descriptor).forEach(function (key) {
+    desc[key] = descriptor[key];
+  });
+  desc.enumerable = !!desc.enumerable;
+  desc.configurable = !!desc.configurable;
+
+  if ('value' in desc || desc.initializer) {
+    desc.writable = true;
+  }
+
+  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+    return decorator(target, property, desc) || desc;
+  }, desc);
+
+  if (context && desc.initializer !== void 0) {
+    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+    desc.initializer = undefined;
+  }
+
+  if (desc.initializer === void 0) {
+    Object['define' + 'Property'](target, property, desc);
+    desc = null;
+  }
+
+  return desc;
+}
+
+function _initializerWarningHelper(descriptor, context) {
+  throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+}
+
+
+
+var BannerConfig = (_class =
+/*#__PURE__*/
+function () {
+  function BannerConfig() {
+    _classCallCheck(this, BannerConfig);
+
+    _initDefineProp(this, "banners", _descriptor, this);
+  }
+
+  _createClass(BannerConfig, [{
+    key: "getBannerConfig",
+    value: function () {
+      var _getBannerConfig = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(data) {
+        var _this = this;
+
+        var _ref, res;
+
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return __WEBPACK_IMPORTED_MODULE_2__api_banner_config__["a" /* default */].getBannerConfig(data);
+
+              case 2:
+                _ref = _context.sent;
+                res = _ref.data;
+                Object(__WEBPACK_IMPORTED_MODULE_1_mobx__["m" /* runInAction */])(function () {
+                  _this.banners = res.data.banners;
+                });
+                return _context.abrupt("return", res);
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function getBannerConfig(_x) {
+        return _getBannerConfig.apply(this, arguments);
+      };
+    }()
+  }]);
+
+  return BannerConfig;
+}(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "banners", [__WEBPACK_IMPORTED_MODULE_1_mobx__["l" /* observable */]], {
+  enumerable: true,
+  initializer: function initializer() {
+    return [];
+  }
+}), _applyDecoratedDescriptor(_class.prototype, "getBannerConfig", [__WEBPACK_IMPORTED_MODULE_1_mobx__["d" /* action */]], Object.getOwnPropertyDescriptor(_class.prototype, "getBannerConfig"), _class.prototype)), _class);
+/* harmony default export */ __webpack_exports__["a"] = (BannerConfig);
+
+/***/ }),
+
 /***/ "./store/base-config.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8175,6 +8329,7 @@ function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__album__ = __webpack_require__("./store/album.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__base_config__ = __webpack_require__("./store/base-config.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tag_config__ = __webpack_require__("./store/tag-config.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__banner_config__ = __webpack_require__("./store/banner-config.js");
 var _desc, _value, _class, _descriptor, _descriptor2, _descriptor3;
 
 function _initDefineProp(target, property, descriptor, context) {
@@ -8227,6 +8382,7 @@ function _initializerWarningHelper(descriptor, context) {
 
 
 
+
 var store = null;
 var Store = (_class = function Store(isServer, lastUpdate) {
   var _this = this;
@@ -8247,6 +8403,7 @@ var Store = (_class = function Store(isServer, lastUpdate) {
   this.album = new __WEBPACK_IMPORTED_MODULE_2__album__["a" /* default */]();
   this.baseConfig = new __WEBPACK_IMPORTED_MODULE_3__base_config__["a" /* default */]();
   this.tagConfig = new __WEBPACK_IMPORTED_MODULE_4__tag_config__["a" /* default */]();
+  this.bannerConfig = new __WEBPACK_IMPORTED_MODULE_5__banner_config__["a" /* default */]();
   this.lastUpdate = lastUpdate;
 }, (_descriptor = _applyDecoratedDescriptor(_class.prototype, "lastUpdate", [__WEBPACK_IMPORTED_MODULE_0_mobx__["l" /* observable */]], {
   enumerable: true,
@@ -8381,13 +8538,12 @@ function () {
               case 2:
                 _ref = _context.sent;
                 res = _ref.data;
-                console.log(res);
                 Object(__WEBPACK_IMPORTED_MODULE_1_mobx__["m" /* runInAction */])(function () {
                   _this.tags = res.data.tags;
                 });
                 return _context.abrupt("return", res);
 
-              case 7:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -8401,28 +8557,14 @@ function () {
     }()
   }, {
     key: "postTagConfig",
-    value: function () {
-      var _postTagConfig = _asyncToGenerator(
-      /*#__PURE__*/
-      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee2(data) {
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                return _context2.abrupt("return", __WEBPACK_IMPORTED_MODULE_2__api_tag_config__["a" /* default */].postTagConfig(data));
-
-              case 1:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      return function postTagConfig(_x2) {
-        return _postTagConfig.apply(this, arguments);
-      };
-    }()
+    value: function postTagConfig(data) {
+      return __WEBPACK_IMPORTED_MODULE_2__api_tag_config__["a" /* default */].postTagConfig(data);
+    }
+  }, {
+    key: "deleteTagConfig",
+    value: function deleteTagConfig(data) {
+      return __WEBPACK_IMPORTED_MODULE_2__api_tag_config__["a" /* default */].deleteTagConfig(data);
+    }
   }]);
 
   return TagConfig;
@@ -8431,7 +8573,7 @@ function () {
   initializer: function initializer() {
     return [];
   }
-}), _applyDecoratedDescriptor(_class.prototype, "getTagConfig", [__WEBPACK_IMPORTED_MODULE_1_mobx__["d" /* action */]], Object.getOwnPropertyDescriptor(_class.prototype, "getTagConfig"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "postTagConfig", [__WEBPACK_IMPORTED_MODULE_1_mobx__["d" /* action */]], Object.getOwnPropertyDescriptor(_class.prototype, "postTagConfig"), _class.prototype)), _class);
+}), _applyDecoratedDescriptor(_class.prototype, "getTagConfig", [__WEBPACK_IMPORTED_MODULE_1_mobx__["d" /* action */]], Object.getOwnPropertyDescriptor(_class.prototype, "getTagConfig"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "postTagConfig", [__WEBPACK_IMPORTED_MODULE_1_mobx__["d" /* action */]], Object.getOwnPropertyDescriptor(_class.prototype, "postTagConfig"), _class.prototype), _applyDecoratedDescriptor(_class.prototype, "deleteTagConfig", [__WEBPACK_IMPORTED_MODULE_1_mobx__["d" /* action */]], Object.getOwnPropertyDescriptor(_class.prototype, "deleteTagConfig"), _class.prototype)), _class);
 /* harmony default export */ __webpack_exports__["a"] = (TagConfig);
 
 /***/ }),

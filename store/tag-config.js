@@ -5,14 +5,16 @@ class TagConfig {
   @observable tags = []
   @action async getTagConfig (data) {
     const { data:res } = await api.getTagConfig(data);
-    console.log(res);
     runInAction(() => {
       this.tags = res.data.tags;
     })
     return res;
   }
-  @action async postTagConfig (data) {
+  @action postTagConfig (data) {
     return api.postTagConfig(data);
+  }
+  @action deleteTagConfig (data) {
+    return api.deleteTagConfig(data);
   }
 }
 

@@ -3,6 +3,7 @@ import Auth from './auth';
 import Album from './album';
 import BaseConfig from './base-config';
 import TagConfig from './tag-config';
+import BannerConfig from './banner-config';
 
 let store = null
 
@@ -15,6 +16,7 @@ class Store {
     this.album = new Album();
     this.baseConfig = new BaseConfig();
     this.tagConfig = new TagConfig();
+    this.bannerConfig = new BannerConfig();
     this.lastUpdate = lastUpdate;
   }
 

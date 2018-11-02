@@ -1,7 +1,13 @@
 import { Component } from 'react';
 import classNames from 'classnames';
+import { autobind } from 'core-decorators';
 
+@autobind
 class LabelContainer extends Component {
+  handleDelete () {
+    const id = this.props.id;
+    this.props.onDelete(id);
+  }
   render () {
     const { title, check, first = false, last = false } = this.props;
     const leftIconClassName = classNames({
@@ -21,7 +27,7 @@ class LabelContainer extends Component {
       <div className="label-container">
         <div className="left-contaner">
           <span>{title}</span>
-          <i className={leftIconClassName}></i>
+          <i onClick={this.handleDelete} className={leftIconClassName}></i>
         </div>
         <div className="right-container">
           <span className={upIconClassName}>上移<i className="up-icon"></i></span>

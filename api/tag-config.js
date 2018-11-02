@@ -15,7 +15,15 @@ const postTagConfig = ({ params, data }) => {
   });
 }
 
+const deleteTagConfig = ({ params }) => {
+  return http.request({
+    url: `/auth/album/cfg/tag/${params.tagId}`,
+    method: 'delete'
+  });
+}
+
 export default {
   getTagConfig,
-  postTagConfig
+  postTagConfig,
+  deleteTagConfig
 }

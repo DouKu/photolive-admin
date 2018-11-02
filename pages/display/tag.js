@@ -5,15 +5,16 @@ import TitleCard from '../../components/title-card';
 import LabelContainer from '../../components/label-container';
 import LabelInput from '../../components/label-input';
 import Button from '../../components/button';
-import { inject } from 'mobx-react';
+import { inject, observer } from 'mobx-react';
 import { autobind } from 'core-decorators';
 import Router from 'next/router';
 
 @Page
 @Content
 @inject(({store}) => ({
-    tagConfig: store.tagConfig
+  tagConfig: store.tagConfig
 }))
+@observer
 @autobind
 class Tag extends Component {
   constructor () {
@@ -47,7 +48,30 @@ class Tag extends Component {
       title: value
     });
   }
+
+  handleDeleteTag (tagId) {
+    this.props.tagConfig.deleteTagConfig({
+      params: {
+        tagId
+      }
+    });
+  }
   
+  renderTags () {
+    const tags = this.props.tagConfig.tags;
+    return tags.map((tag, index) => (
+      <LabelContainer 
+        id={tag.id}
+        onDelete={this.handleDeleteTag}
+        title={tag.title}
+        key={index}
+        check={false}
+        first={index === 0}
+        last={index === tags.length - 1}>
+      </LabelContainer>
+    ))
+  }
+
   render () {
     return (
       <div>
@@ -56,16 +80,7 @@ class Tag extends Component {
         </TitleCard>
 
         <p className="sub-title">当前标签</p>
-
-        <LabelContainer title="所有照片"
-          check={false}
-          first={true}>
-        </LabelContainer>
-        <LabelContainer title="婚礼前夕"
-          check={true}
-          last={true}>
-        </LabelContainer>
-        
+        {this.renderTags()}
         <LabelInput placeholder="请输入标签名称" 
           onChange={this.handleInputTag} 
           onClick={this.handleAddTag}>
