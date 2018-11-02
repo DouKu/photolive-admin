@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ 	return __webpack_require__(__webpack_require__.s = 30);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -79,27 +79,57 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 24:
+/***/ 1:
+/***/ (function(module, exports) {
+
+module.exports = require("core-decorators");
+
+/***/ }),
+
+/***/ 2:
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports) {
+
+module.exports = require("mobx-react");
+
+/***/ }),
+
+/***/ 30:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(25);
+module.exports = __webpack_require__(31);
 
 
 /***/ }),
 
-/***/ 25:
+/***/ 31:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyDocument; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_document__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_document___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_document__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_decorators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_decorators__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_mobx_react__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_mobx_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_mobx_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_router__);
+var _dec, _class;
+
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -113,45 +143,73 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/*
-In production the stylesheet is compiled to .next/static/style.css.
-The file will be served from /_next/static/style.css
-You could include it into the page using either next/head or a custom _document.js.
-*/
 
 
-var MyDocument =
+
+
+var SignIn = (_dec = Object(__WEBPACK_IMPORTED_MODULE_2_mobx_react__["inject"])(function (_ref) {
+  var store = _ref.store;
+  return {
+    auth: store.auth
+  };
+}), _dec(_class = Object(__WEBPACK_IMPORTED_MODULE_2_mobx_react__["observer"])(_class = Object(__WEBPACK_IMPORTED_MODULE_1_core_decorators__["autobind"])(_class =
 /*#__PURE__*/
-function (_Document) {
-  _inherits(MyDocument, _Document);
+function (_Component) {
+  _inherits(SignIn, _Component);
 
-  function MyDocument() {
-    _classCallCheck(this, MyDocument);
+  function SignIn() {
+    var _this;
 
-    return _possibleConstructorReturn(this, (MyDocument.__proto__ || Object.getPrototypeOf(MyDocument)).apply(this, arguments));
+    _classCallCheck(this, SignIn);
+
+    _this = _possibleConstructorReturn(this, (SignIn.__proto__ || Object.getPrototypeOf(SignIn)).call(this));
+    _this.state = {
+      account: '',
+      password: ''
+    };
+    return _this;
   }
 
-  _createClass(MyDocument, [{
+  _createClass(SignIn, [{
+    key: "handleInputAccount",
+    value: function handleInputAccount(event) {
+      this.setState({
+        account: event.target.value
+      });
+    }
+  }, {
+    key: "handleInputPassword",
+    value: function handleInputPassword(event) {
+      this.setState({
+        password: event.target.value
+      });
+    }
+  }, {
+    key: "handleSignIn",
+    value: function handleSignIn() {
+      this.props.auth.signIn(_objectSpread({}, this.state)).then(function (res) {
+        if (res.code === 200) {
+          __WEBPACK_IMPORTED_MODULE_3_next_router___default.a.replace('/');
+        }
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("html", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["Head"], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/_next/static/style.css"
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("body", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["Main"], null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["NextScript"], null)));
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", null, "SignIn"), "Account", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        onChange: this.handleInputAccount
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null), "Password", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
+        type: "password",
+        onChange: this.handleInputPassword
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
+        onClick: this.handleSignIn
+      }, "\u767B\u5F55"));
     }
   }]);
 
-  return MyDocument;
-}(__WEBPACK_IMPORTED_MODULE_1_next_document___default.a);
-
-
-
-/***/ }),
-
-/***/ 26:
-/***/ (function(module, exports) {
-
-module.exports = require("next/document");
+  return SignIn;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"])) || _class) || _class) || _class);
+/* harmony default export */ __webpack_exports__["default"] = (SignIn);
 
 /***/ })
 

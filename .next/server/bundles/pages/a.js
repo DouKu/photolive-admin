@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 24);
+/******/ 	return __webpack_require__(__webpack_require__.s = 27);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -79,25 +79,53 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ 24:
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(25);
+module.exports = __webpack_require__(28);
 
 
 /***/ }),
 
-/***/ 25:
+/***/ 28:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MyDocument; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_document__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_document___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_document__);
 
+// EXTERNAL MODULE: external "react"
+var external__react_ = __webpack_require__(0);
+var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
+
+// EXTERNAL MODULE: external "mobx-react"
+var external__mobx_react_ = __webpack_require__(3);
+var external__mobx_react__default = /*#__PURE__*/__webpack_require__.n(external__mobx_react_);
+
+// EXTERNAL MODULE: external "styled-jsx/style"
+var style_ = __webpack_require__(29);
+var style__default = /*#__PURE__*/__webpack_require__.n(style_);
+
+// CONCATENATED MODULE: ./components/clock.js
+
+
+/* harmony default export */ var clock = (function (props) {
+  return external__react__default.a.createElement("div", {
+    className: "jsx-2858538177" + " " + ((props.light ? 'light' : '') || "")
+  }, format(new Date(props.lastUpdate)), external__react__default.a.createElement(style__default.a, {
+    styleId: "2858538177",
+    css: ["div.jsx-2858538177{padding:15px;color:#82FA58;display:inline-block;font:50px menlo,monaco,monospace;background-color:#000;}", ".light.jsx-2858538177{background-color:#999;}"]
+  }));
+});
+
+var format = function format(t) {
+  return "".concat(pad(t.getUTCHours()), ":").concat(pad(t.getUTCMinutes()), ":").concat(pad(t.getUTCSeconds()));
+};
+
+var pad = function pad(n) {
+  return n < 10 ? "0".concat(n) : n;
+};
+// CONCATENATED MODULE: ./pages/a.js
+var _dec, _class;
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -113,45 +141,57 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/*
-In production the stylesheet is compiled to .next/static/style.css.
-The file will be served from /_next/static/style.css
-You could include it into the page using either next/head or a custom _document.js.
-*/
 
 
-var MyDocument =
+
+var a_Page = (_dec = Object(external__mobx_react_["inject"])('store'), _dec(_class = Object(external__mobx_react_["observer"])(_class =
 /*#__PURE__*/
-function (_Document) {
-  _inherits(MyDocument, _Document);
+function (_React$Component) {
+  _inherits(Page, _React$Component);
 
-  function MyDocument() {
-    _classCallCheck(this, MyDocument);
+  function Page() {
+    _classCallCheck(this, Page);
 
-    return _possibleConstructorReturn(this, (MyDocument.__proto__ || Object.getPrototypeOf(MyDocument)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).apply(this, arguments));
   }
 
-  _createClass(MyDocument, [{
+  _createClass(Page, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.store.start();
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      this.props.store.stop();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("html", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["Head"], null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/_next/static/style.css"
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("body", null, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["Main"], null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_document__["NextScript"], null)));
+      return external__react__default.a.createElement("div", null, external__react__default.a.createElement("h1", null, this.props.title), external__react__default.a.createElement(clock, {
+        lastUpdate: this.props.store.lastUpdate,
+        light: this.props.store.light
+      }));
     }
   }]);
 
-  return MyDocument;
-}(__WEBPACK_IMPORTED_MODULE_1_next_document___default.a);
-
-
+  return Page;
+}(external__react__default.a.Component)) || _class) || _class);
+/* harmony default export */ var a = __webpack_exports__["default"] = (a_Page);
 
 /***/ }),
 
-/***/ 26:
+/***/ 29:
 /***/ (function(module, exports) {
 
-module.exports = require("next/document");
+module.exports = require("styled-jsx/style");
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports) {
+
+module.exports = require("mobx-react");
 
 /***/ })
 
