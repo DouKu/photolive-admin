@@ -1,7 +1,7 @@
 module.exports =
 __NEXT_REGISTER_PAGE('/base', function() {
           var comp =
-      webpackJsonp([6],{
+      webpackJsonp([8],{
 
 /***/ "./components/button.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -43687,7 +43687,7 @@ var range = function range(size) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 7:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/base/index.js");
@@ -43695,7 +43695,7 @@ module.exports = __webpack_require__("./pages/base/index.js");
 
 /***/ })
 
-},[5])
+},[7])
           return { page: comp.default }
         })
       ;

@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import Button from '../button';
+import ButtonFile from '../button-file';
 import { autobind } from 'core-decorators';
+import fileApi from '../../api/file'
 
 @autobind
 class ImageUpload extends Component {
@@ -13,12 +15,17 @@ class ImageUpload extends Component {
   handleMouseEnter () {
     this.setState({
       showWrap: true
-    })
+    });
   }
   handleMouseLeave () {
     this.setState({
       showWrap: false
-    })
+    });
+  }
+  handleFileChange (file) {
+    fileApi.upload(file).then(res => {
+      console.log(res);
+    });
   }
   render () {
     const {
@@ -51,7 +58,10 @@ class ImageUpload extends Component {
             {children}
           </div>
           <div className="action-btns">
-            <Button>{leftButtonText}</Button>
+            <ButtonFile
+              onChange={this.handleFileChange}>
+              {leftButtonText}
+            </ButtonFile>
             <Button>{rightButtonText}</Button>
           </div>
         </div>

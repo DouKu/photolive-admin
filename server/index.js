@@ -7,8 +7,8 @@ const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const proxy = require('koa-proxy');
-const apiServerAddr = 'http://api.qxphotolive.xyz';
-// const apiServerAddr = 'http://localhost:52014';
+// const apiServerAddr = 'http://api.qxphotolive.xyz';
+const apiServerAddr = 'http://localhost:52014';
 
 mobxReact.useStaticRendering(true);
 
