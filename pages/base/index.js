@@ -11,7 +11,7 @@ import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
 import Router from 'next/router';
 import DatePicker from '../../components/date-picker';
-import { notify } from 'react-notify-toast';
+import tip from '../../components/tips';
 
 @Page
 @Content
@@ -22,11 +22,14 @@ import { notify } from 'react-notify-toast';
 @autobind
 class Base extends Component {
   componentDidMount () {
+    this.initData();
+  }
+  initData () {
     this.props.baseConfig.getBaseConfig({
       params: {
         albumId: Router.query.id
       }
-    })
+    });
   }
   render () {
     const styleOptions = [
@@ -46,7 +49,7 @@ class Base extends Component {
         </FormItem>
 
         <FormItem label="活动时间">
-          <DatePicker default={new Date()} onChange={this.handleActivityTimeChange}></DatePicker>
+          <DatePicker default={this.props.baseConfig.base.activityTime} onChange={this.handleActivityTimeChange}></DatePicker>
         </FormItem>
 
         <FormItem label="活动地点" 
@@ -94,12 +97,10 @@ class Base extends Component {
         themeId
       }
     }).then(() => {
-      notify.show('修改成功!', 'custom', 2000, {
-        background: '#ffffff', text: "#646466"
-      });
-      this.props.baseConfig.getBaseConfig();
+      tip.success('修改成功!');
+      this.initData();
     })
   }
 }
 
-export default Base
+export default Base;

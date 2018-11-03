@@ -8,6 +8,7 @@ import Button from '../../components/button';
 import { inject, observer } from 'mobx-react';
 import { autobind } from 'core-decorators';
 import Router from 'next/router';
+import tip from '../../components/tips';
 
 @Page
 @Content
@@ -25,6 +26,10 @@ class Tag extends Component {
   }
 
   componentDidMount () {
+    this.initData();
+  }
+
+  initData () {
     this.props.tagConfig.getTagConfig({
       params: {
         albumId: Router.query.id
@@ -40,7 +45,13 @@ class Tag extends Component {
       data: {
         title: this.state.title
       }
-    });
+    }).then(() => {
+      tip.success('添加成功!');
+      this.initData();
+      this.setState({
+        title: ''
+      });
+    })
   }
 
   handleInputTag (value) {
@@ -54,7 +65,10 @@ class Tag extends Component {
       params: {
         tagId
       }
-    });
+    }).then(() => {
+      tip.success('删除成功!');
+      this.initData();
+    })
   }
   
   renderTags () {
@@ -81,7 +95,9 @@ class Tag extends Component {
 
         <p className="sub-title">当前标签</p>
         {this.renderTags()}
-        <LabelInput placeholder="请输入标签名称" 
+        <LabelInput 
+          value={this.state.title}
+          placeholder="请输入标签名称" 
           onChange={this.handleInputTag} 
           onClick={this.handleAddTag}>
         </LabelInput>

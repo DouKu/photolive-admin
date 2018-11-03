@@ -6,16 +6,30 @@ import { autobind } from 'core-decorators';
 @autobind
 class DatePicket extends Component {
   componentWillMount() {
-    const now = this.props.default || new Date();
+    const now = new Date(this.props.default) || new Date();
     const year = now.getFullYear();
     const month = now.getMonth();
-    const day = now.getDay();
+    const day = now.getDate();
     this.setState({
       year,
       month,
       day
     });
   }
+
+  componentWillReceiveProps (nextProps) {
+    const defaultDate = nextProps.default;
+    const date = new Date(defaultDate);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const day = date.getDate();
+    this.setState({
+      year,
+      month,
+      day
+    });
+  }
+  
   constructor () {
     super();
     this.state = {
@@ -76,33 +90,24 @@ class DatePicket extends Component {
     );
   }
   handleYearChange (year) {
-    this.setState({
-      year
-    });
     const date = new Date();
     date.setFullYear(year);
-    date.setDate(this.state.day);
     date.setMonth(this.state.month);
+    date.setDate(this.state.day);
     this.props.onChange(date);
   }
   handleMonthChange (month) {
-    this.setState({
-      month
-    });
     const date = new Date();
     date.setFullYear(this.state.year);
-    date.setDate(month);
-    date.setMonth(this.state.month);
+    date.setMonth(month);
+    date.setDate(this.state.day);
     this.props.onChange(date);
   }
   handleDayChange (day) {
-    this.setState({
-      day
-    });
     const date = new Date();
     date.setFullYear(this.state.year);
-    date.setDate(this.state.day);
-    date.setMonth(day);
+    date.setMonth(this.state.month);
+    date.setDate(day);
     this.props.onChange(date);
   }
 }
