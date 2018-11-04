@@ -2,7 +2,7 @@ import http from '../lib/http';
 
 const upload = (file) => {
   const data = new FormData();
-  data.append('filefield', file);
+  data.append('file', file);
   return http.request({
     url: '/auth/upload',
     method: 'post',
